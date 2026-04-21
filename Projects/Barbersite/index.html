@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projektseite | Negarin Webdesign</title>
+  <meta name="description" content="Projektpräsentation für ein Webdesign-Referenzprojekt von Negarin Webdesign." />
+  <style>
+    :root {
+      --bg: #f8f7fc;
+      --surface: #ffffff;
+      --surface-soft: #f3efff;
+      --line: rgba(98, 82, 181, 0.12);
+      --text: #1d2340;
+      --muted: #697289;
+      --accent: #6f5bff;
+      --accent-soft: #ece8ff;
+      --accent-2: #b8a8ff;
+      --shadow: 0 20px 50px rgba(86, 67, 163, 0.10);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(111,91,255,0.10), transparent 28%),
+        linear-gradient(180deg, #fcfbff 0%, #f6f3ff 100%);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255,255,255,0.82);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid var(--line);
+      transition: 0.25s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), #8a73ff);
+      color: white;
+      box-shadow: var(--shadow);
+    }
+
+    .btn.secondary {
+      background: white;
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 72px 0 42px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.95fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    h1, h2, h3 { line-height: 1.15; margin: 0 0 16px; }
+    h1 { font-size: clamp(2.2rem, 5vw, 4.3rem); }
+    h2 { font-size: clamp(1.65rem, 3vw, 2.4rem); }
+    h3 { font-size: 1.14rem; }
+
+    p { margin: 0 0 16px; }
+
+    .lead {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 62ch;
+      margin-bottom: 24px;
+    }
+
+    .meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .meta-chip {
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, #ffffff, #f5f1ff);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .browser-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      padding: 4px 4px 0;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(111,91,255,0.28);
+    }
+
+    .project-preview {
+      min-height: 420px;
+      border-radius: 22px;
+      border: 1px solid rgba(98, 82, 181, 0.10);
+      background: linear-gradient(135deg, #efe9ff, #d9d0ff 55%, #cfc2ff);
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .preview-card {
+      width: min(86%, 420px);
+      background: rgba(255,255,255,0.78);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.6);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .preview-line {
+      height: 12px;
+      border-radius: 999px;
+      background: rgba(111,91,255,0.16);
+      margin-bottom: 12px;
+    }
+
+    .preview-line.small { width: 42%; }
+    .preview-line.medium { width: 70%; }
+    .preview-line.large { width: 100%; }
+
+    section { padding: 28px 0 68px; }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 26px;
+      align-items: start;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.92);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .card p, .card li { color: var(--muted); }
+
+    .stack {
+      display: grid;
+      gap: 22px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .info-box {
+      padding: 20px;
+      border-radius: 20px;
+      background: var(--surface-soft);
+      border: 1px solid rgba(98, 82, 181, 0.09);
+    }
+
+    .label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 13px;
+    }
+
+    .list li {
+      position: relative;
+      padding-left: 24px;
+    }
+
+    .list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: -1px;
+      color: var(--accent);
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .sidebar-card {
+      position: sticky;
+      top: 106px;
+    }
+
+    .mini-preview {
+      height: 190px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, #f0ebff, #ddd3ff 55%, #c9bcff);
+      border: 1px solid rgba(98, 82, 181, 0.10);
+      margin-bottom: 20px;
+    }
+
+    .tag-wrap {
+      display: flex;
+      gap: 9px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .tag {
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: white;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .cta-box {
+      margin-top: 18px;
+      padding: 18px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(111,91,255,0.08), rgba(184,168,255,0.14));
+      border: 1px solid rgba(98, 82, 181, 0.10);
+    }
+
+    footer {
+      padding: 24px 0 40px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .layout,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar-card {
+        position: static;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .nav { flex-direction: column; align-items: flex-start; padding: 14px 0; }
+      .hero { padding-top: 52px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="/" class="logo">Negarin <span>Webdesign</span></a>
+      <div class="nav-actions">
+        <a class="btn secondary" href="/">Zurück zum Portfolio</a>
+        <a class="btn primary" href="#kontakt">Projekt anfragen</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Projektpräsentation</div>
+          <h1>Barbershop Website mit modernem, lokalem Markenauftritt</h1>
+          <p class="lead">
+            Dieses Projekt zeigt ein modernes Website-Konzept für einen Barbershop mit klarer Struktur, starker visueller Wirkung und einem vertrauensvollen Auftritt für lokale Kundengewinnung.
+          </p>
+          <div class="meta">
+            <span class="meta-chip">Branche: Beauty & Grooming</span>
+            <span class="meta-chip">Leistung: Webdesign</span>
+            <span class="meta-chip">Typ: Designkonzept / Referenzprojekt</span>
+          </div>
+          <div class="nav-actions">
+            <a class="btn primary" href="#ergebnis">Projekt ansehen</a>
+            <a class="btn secondary" href="#details">Mehr Details</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="browser-bar">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+          <div class="project-preview">
+            <div class="preview-card">
+              <div class="preview-line small"></div>
+              <div class="preview-line medium"></div>
+              <div class="preview-line large"></div>
+              <div class="preview-line large"></div>
+              <div class="preview-line medium"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="details">
+      <div class="container layout">
+        <div class="stack">
+          <div class="card">
+            <h2>Projektüberblick</h2>
+            <p>
+              Ziel war es, eine Website zu gestalten, die modern, hochwertig und lokal vertrauenswürdig wirkt. Der Fokus lag auf einem stilvollen Erscheinungsbild, klaren Servicebereichen und einer Struktur, die Besucher schnell zu Kontakt oder Terminwunsch führt.
+            </p>
+            <div class="grid-2">
+              <div class="info-box">
+                <span class="label">Ziel</span>
+                <p>Professioneller Online-Auftritt für lokale Sichtbarkeit, Vertrauen und bessere Kundenansprache.</p>
+              </div>
+              <div class="info-box">
+                <span class="label">Zielgruppe</span>
+                <p>Männer, die einen modernen Barbershop mit hochwertigem Service und starker Markenwirkung suchen.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h2>Was in diesem Projekt wichtig war</h2>
+            <ul class="list">
+              <li>Klare Startseite mit starkem ersten Eindruck</li>
+              <li>Saubere Präsentation von Leistungen und Stilrichtung</li>
+              <li>Mobile Darstellung für lokale Besucher auf dem Smartphone</li>
+              <li>Professionelle Bildsprache und strukturierte Informationsbereiche</li>
+              <li>Kontakt- und Buchungsnähe durch klare Call-to-Action-Bereiche</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2>Designansatz</h2>
+            <p>
+              Das visuelle Konzept verbindet Eleganz, moderne Typografie und eine klare Seitengliederung. Dadurch wirkt die Website hochwertig, ohne überladen zu sein. Die Nutzerführung bleibt einfach, damit Besucher Leistungen, Preise, Galerie und Kontakt schnell erfassen können.
+            </p>
+          </div>
+
+          <div class="card" id="ergebnis">
+            <h2>Ergebnis</h2>
+            <p>
+              Entstanden ist eine moderne Projektseite mit starker lokaler Wirkung, die sich ideal als Referenz für Dienstleistungsunternehmen eignet. Das Konzept kann für reale Kundenprojekte angepasst und weiterentwickelt werden.
+            </p>
+            <div class="grid-2">
+              <div class="info-box">
+                <span class="label">Stärken</span>
+                <p>Modern, visuell stark, mobilfreundlich und professionell für lokale Markenkommunikation.</p>
+              </div>
+              <div class="info-box">
+                <span class="label">Einsatz</span>
+                <p>Geeignet für Barbershops, Salons, Beauty-Studios und andere lokale Service-Unternehmen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card sidebar-card" id="kontakt">
+          <div class="mini-preview"></div>
+          <h3>Projektinformationen</h3>
+          <p>Diese Seite kann für jedes Referenzprojekt individuell angepasst werden.</p>
+          <div class="tag-wrap">
+            <span class="tag">Responsive</span>
+            <span class="tag">Local Business</span>
+            <span class="tag">Modern UI</span>
+            <span class="tag">Branding</span>
+          </div>
+
+          <div class="cta-box">
+            <h3>Sie möchten ein ähnliches Projekt?</h3>
+            <p>Ich gestalte moderne Websites für kleine Unternehmen, lokale Dienstleister und Selbstständige.</p>
+            <div class="nav-actions" style="margin-top:14px;">
+              <a class="btn primary" href="mailto:hello@deine-domain.de">Anfrage senden</a>
+              <a class="btn secondary" href="/">Mehr Projekte</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>© 2026 Negarin Webdesign</div>
+      <div>Projektseite für Webdesign-Portfolio</div>
+    </div>
+  </footer>
+</body>
+</html>
+
