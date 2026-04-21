@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Webdesign für kleine Unternehmen</title>
+  <meta name="description" content="Professionelles Webdesign-Portfolio für kleine Unternehmen in Deutschland. Moderne, responsive und benutzerfreundliche Websites." />
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --bg-soft: #121829;
+      --card: rgba(255,255,255,0.06);
+      --line: rgba(255,255,255,0.12);
+      --text: #f3f6ff;
+      --muted: #b5bfd6;
+      --accent: #7c9cff;
+      --accent-2: #9ce2ff;
+      --success: #8ce7b0;
+      --shadow: 0 20px 60px rgba(0,0,0,0.35);
+      --radius: 22px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(124,156,255,0.18), transparent 30%),
+        radial-gradient(circle at right, rgba(156,226,255,0.12), transparent 25%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, var(--accent), #5b74ff);
+      color: white;
+      font-weight: 700;
+      transition: 0.25s ease;
+      box-shadow: var(--shadow);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn.secondary {
+      background: transparent;
+      color: var(--text);
+      box-shadow: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(14px);
+      background: rgba(11,15,25,0.75);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span { color: var(--accent-2); }
+
+    nav ul {
+      display: flex;
+      gap: 22px;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    nav a:hover { color: var(--text); }
+
+    .hero {
+      padding: 90px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--accent-2);
+      background: rgba(255,255,255,0.04);
+      margin-bottom: 18px;
+      font-size: 0.92rem;
+    }
+
+    h1, h2, h3 { line-height: 1.15; margin: 0 0 16px; }
+    h1 { font-size: clamp(2.3rem, 5vw, 4.8rem); }
+    h2 { font-size: clamp(1.8rem, 3vw, 2.8rem); }
+    h3 { font-size: 1.25rem; }
+
+    .lead {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 62ch;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .stat {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 18px;
+      border-radius: 18px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 1.4rem;
+      margin-bottom: 6px;
+      color: white;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .browser-bar {
+      display: flex;
+      gap: 8px;
+      padding: 16px 18px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .browser-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.35);
+    }
+
+    .mockup {
+      padding: 24px;
+      min-height: 420px;
+      display: grid;
+      gap: 18px;
+      background: linear-gradient(180deg, rgba(124,156,255,0.12), transparent);
+    }
+
+    .mockup-block, .mockup-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 18px;
+    }
+
+    .mockup-block { height: 110px; }
+
+    .mockup-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .mockup-card { height: 120px; }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      max-width: 60ch;
+      margin: 0;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card p, .card li { color: var(--muted); }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(124,156,255,0.28), rgba(156,226,255,0.18));
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .portfolio-item {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .portfolio-cover {
+      height: 220px;
+      background: linear-gradient(135deg, #26314f, #151c30 60%, #0f1423);
+      border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+
+    .portfolio-label {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 0.85rem;
+    }
+
+    .portfolio-content {
+      padding: 22px;
+    }
+
+    .portfolio-meta {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 14px 0 0;
+    }
+
+    .tag {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    .check-list li {
+      padding-left: 30px;
+      position: relative;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--success);
+      font-weight: 700;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 16px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .step-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #5c76ff);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+    }
+
+    .about-box {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .profile {
+      aspect-ratio: 1 / 1;
+      border-radius: 26px;
+      background: linear-gradient(135deg, rgba(124,156,255,0.35), rgba(156,226,255,0.18));
+      border: 1px solid var(--line);
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .contact-item {
+      padding: 14px 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--muted);
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    input, textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: white;
+      border-radius: 16px;
+      padding: 15px 16px;
+      font: inherit;
+      outline: none;
+    }
+
+    input::placeholder, textarea::placeholder { color: #95a0bb; }
+    textarea { min-height: 140px; resize: vertical; }
+
+    footer {
+      padding: 28px 0 40px;
+      color: var(--muted);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .grid-3,
+      .portfolio-grid,
+      .split,
+      .contact-box,
+      .about-box {
+        grid-template-columns: 1fr;
+      }
+
+      .stats { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      .nav { flex-direction: column; align-items: flex-start; padding: 14px 0; }
+      nav ul { gap: 14px; }
+      .hero { padding-top: 60px; }
+      .section-head { align-items: start; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="logo">Negarin <span>Webdesign</span></a>
+      <nav>
+        <ul>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#vorteile">Vorteile</a></li>
+          <li><a href="#ablauf">Ablauf</a></li>
+          <li><a href="#ueber-mich">Über mich</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Freelance Webdesignerin in Deutschland</div>
+          <h1>Moderne Websites für kleine Unternehmen und Selbstständige</h1>
+          <p class="lead">
+            Ich gestalte professionelle, responsive und benutzerfreundliche Websites mit Fokus auf klares Design, gute Struktur und einen überzeugenden ersten Eindruck. Diese Seite zeigt meine Arbeitsweise, meine Leistungen und ausgewählte Beispielprojekte.
+          </p>
+          <div class="hero-actions">
+            <a class="btn" href="#portfolio">Portfolio ansehen</a>
+            <a class="btn secondary" href="#kontakt">Projekt anfragen</a>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <strong>Modern</strong>
+              <span>Sauberes und professionelles Webdesign</span>
+            </div>
+            <div class="stat">
+              <strong>Responsive</strong>
+              <span>Optimiert für Desktop, Tablet und Smartphone</span>
+            </div>
+            <div class="stat">
+              <strong>Zielorientiert</strong>
+              <span>Websites mit Fokus auf Vertrauen und Anfragen</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="browser-bar">
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+            <span class="browser-dot"></span>
+          </div>
+          <div class="mockup">
+            <div class="mockup-block"></div>
+            <div class="mockup-grid">
+              <div class="mockup-card"></div>
+              <div class="mockup-card"></div>
+            </div>
+            <div class="mockup-block" style="height: 140px;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="leistungen">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Leistungen</h2>
+            <p>Ich unterstütze kleine Unternehmen dabei, online professionell aufzutreten und potenzielle Kundinnen und Kunden mit einer klaren und modernen Website zu überzeugen.</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="service-icon">✦</div>
+            <h3>Webdesign</h3>
+            <p>Individuelle Gestaltung moderner Websites mit klarer Struktur, ansprechender Optik und benutzerfreundlichem Aufbau.</p>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">◫</div>
+            <h3>Landing Pages</h3>
+            <p>Verkaufsstarke und übersichtliche Seiten für Dienstleistungen, Kampagnen oder lokale Unternehmen mit klarem Fokus auf Anfragen.</p>
+          </article>
+
+          <article class="card">
+            <div class="service-icon">⌘</div>
+            <h3>Website-Redesign</h3>
+            <p>Überarbeitung bestehender Websites, um Design, Lesbarkeit, Vertrauen und mobile Darstellung deutlich zu verbessern.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Ausgewählte Projekte</h2>
+            <p>Hier sehen Sie Beispielprojekte aus verschiedenen Branchen. Diese können reale Kundenarbeiten, Designkonzepte oder Referenzprojekte sein.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="card portfolio-item">
+            <div class="portfolio-cover">
+              <span class="portfolio-label">Café / Gastronomie</span>
+            </div>
+            <div class="portfolio-content">
+              <h3>Café Website</h3>
+              <p>Elegante Website für ein Café mit emotionalem Design, Menü-Bereich, Kontaktinformationen und mobilfreundlicher Struktur.</p>
+              <div class="portfolio-meta">
+                <span class="tag">Responsive</span>
+                <span class="tag">Modern UI</span>
+                <span class="tag">Local Business</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card portfolio-item">
+            <div class="portfolio-cover">
+              <span class="portfolio-label">Reinigung / Service</span>
+            </div>
+            <div class="portfolio-content">
+              <h3>Reinigungsservice</h3>
+              <p>Klare und vertrauenswürdige Website für ein Dienstleistungsunternehmen mit Fokus auf Leistungen, Vorteile und Kontaktanfragen.</p>
+              <div class="portfolio-meta">
+                <span class="tag">Service Design</span>
+                <span class="tag">Lead-Fokus</span>
+                <span class="tag">Mobile First</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card portfolio-item">
+            <div class="portfolio-cover">
+              <span class="portfolio-label">Fitness / Studio</span>
+            </div>
+            <div class="portfolio-content">
+              <h3>Fitness Studio</h3>
+              <p>Kraftvolle und moderne Website mit markanter Optik, Angebotsübersicht und starker visueller Präsenz für lokale Kundengewinnung.</p>
+              <div class="portfolio-meta">
+                <span class="tag">Branding</span>
+                <span class="tag">Strong Visuals</span>
+                <span class="tag">UX</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="vorteile">
+      <div class="container split">
+        <div class="card">
+          <h2>Warum mit mir arbeiten?</h2>
+          <p>Mein Fokus liegt auf Websites, die nicht nur gut aussehen, sondern auch professionell wirken und Vertrauen schaffen.</p>
+          <ul class="check-list">
+            <li>Modernes und sauberes Design für einen professionellen Auftritt</li>
+            <li>Responsive Umsetzung für alle Geräte</li>
+            <li>Klare Struktur für bessere Nutzerführung</li>
+            <li>Geeignet für kleine Unternehmen, Freelancer und lokale Services</li>
+            <li>Individuelle Gestaltung statt austauschbarer Standardlösung</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Für Kunden und offizielle Präsentation geeignet</h2>
+          <p>Diese Portfolio-Seite kann genutzt werden, um Kundinnen und Kunden Ihre Arbeit zu zeigen und gleichzeitig Ihre Selbstständigkeit professionell zu präsentieren.</p>
+          <ul class="check-list">
+            <li>Professionelle Darstellung Ihrer Leistungen</li>
+            <li>Klare Positionierung als Webdesignerin</li>
+            <li>Seriöser Eindruck für Geschäftspartner und Behörden</li>
+            <li>Strukturierte Übersicht über Projekte und Kompetenzen</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="ablauf">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Ablauf der Zusammenarbeit</h2>
+            <p>Ein klarer Prozess sorgt für eine strukturierte, angenehme und effiziente Zusammenarbeit.</p>
+          </div>
+        </div>
+
+        <div class="timeline">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div>
+              <h3>Erstgespräch</h3>
+              <p>Wir besprechen Ihr Unternehmen, Ihre Ziele, Ihre Zielgruppe und die gewünschte Richtung für die Website.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">2</div>
+            <div>
+              <h3>Konzept & Design</h3>
+              <p>Ich entwickle ein passendes Webdesign mit Fokus auf Struktur, Wirkung, Lesbarkeit und modernes Erscheinungsbild.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">3</div>
+            <div>
+              <h3>Umsetzung</h3>
+              <p>Die Website wird responsiv aufgebaut und für eine saubere Darstellung auf allen Geräten vorbereitet.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-num">4</div>
+            <div>
+              <h3>Feedback & Übergabe</h3>
+              <p>Nach finalen Anpassungen erhalten Sie eine fertige Website, die professionell präsentiert werden kann.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ueber-mich">
+      <div class="container">
+        <div class="card about-box">
+          <div class="profile"></div>
+          <div>
+            <h2>Über mich</h2>
+            <p>
+              Ich bin Freelance Webdesignerin und erstelle moderne Websites für kleine Unternehmen, lokale Dienstleister und Selbstständige. Mein Schwerpunkt liegt auf klarem Design, benutzerfreundlicher Struktur und einer professionellen Online-Präsenz.
+            </p>
+            <p>
+              Ich arbeite mit einem besonderen Blick für Ästhetik, Übersichtlichkeit und digitale Wirkung. Mein Ziel ist es, Websites zu gestalten, die Vertrauen schaffen und Unternehmen online hochwertig präsentieren.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontakt">
+      <div class="container contact-box">
+        <div class="card">
+          <h2>Kontakt</h2>
+          <p>Sie möchten mit mir zusammenarbeiten oder ein Projekt besprechen? Ich freue mich über Ihre Anfrage.</p>
+          <div class="contact-list">
+            <div class="contact-item"><strong>E-Mail:</strong>negarinarianfar@gmail.com</div>
+            <div class="contact-item"><strong>Standort:</strong> Deutschland</div>
+            <div class="contact-item"><strong>Leistungen:</strong> Webdesign, Landing Pages, Website-Redesign</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Projekt anfragen</h2>
+          <form>
+            <input type="text" placeholder="Ihr Name" />
+            <input type="email" placeholder="Ihre E-Mail-Adresse" />
+            <input type="text" placeholder="Unternehmen / Branche" />
+            <textarea placeholder="Erzählen Sie kurz von Ihrem Projekt..."></textarea>
+            <button type="submit" class="btn">Anfrage senden</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-wrap">
+      <div>© 2026 Negarin Webdesign. Alle Rechte vorbehalten.</div>
+      <div>Portfolio für Webdesign & Freelance-Präsentation</div>
+    </div>
+  </footer>
+</body>
+</html>
