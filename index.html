@@ -7,28 +7,7 @@
   <meta name="description" content="Professionelles Webdesign-Portfolio für kleine Unternehmen in Deutschland. Moderne, responsive und benutzerfreundliche Websites." />
 <link rel="stylesheet" href="assets/style.css">
 </head>
-  <script>
-  const portfolioSlider = document.getElementById('portfolioSlider');
-  const prevBtn = document.querySelector('.slider-btn-prev');
-  const nextBtn = document.querySelector('.slider-btn-next');
-
-  if (portfolioSlider && prevBtn && nextBtn) {
-    const getScrollAmount = () => {
-      const firstCard = portfolioSlider.querySelector('.portfolio-item');
-      if (!firstCard) return 300;
-      const gap = window.innerWidth <= 700 ? 16 : 22;
-      return firstCard.offsetWidth + gap;
-    };
-
-    prevBtn.addEventListener('click', () => {
-      portfolioSlider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-    });
-
-    nextBtn.addEventListener('click', () => {
-      portfolioSlider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-    });
-  }
-</script>
+ 
 <body>
   <header>
     <div class="container nav">
@@ -123,15 +102,6 @@
         </div>
       </div>
     </section>
-
-    <section id="portfolio">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <h2>Ausgewählte Projekte</h2>
-            <p>Hier sehen Sie Beispielprojekte aus verschiedenen Branchen. Diese können reale Kundenarbeiten, Designkonzepte oder Referenzprojekte sein.</p>
-          </div>
-        </div>
 
         <section id="portfolio">
   <div class="container">
@@ -370,5 +340,27 @@
       <div>Portfolio für Webdesign & Freelance-Präsentation</div>
     </div>
   </footer>
+   <script>
+  const portfolioSlider = document.getElementById('portfolioSlider');
+  const prevBtn = document.querySelector('.slider-btn-prev');
+  const nextBtn = document.querySelector('.slider-btn-next');
+
+  if (portfolioSlider && prevBtn && nextBtn) {
+    const getScrollAmount = () => {
+      const firstCard = portfolioSlider.querySelector('.portfolio-item');
+      if (!firstCard) return 300;
+      const gap = window.innerWidth <= 700 ? 16 : 22;
+      return firstCard.offsetWidth + gap;
+    };
+
+    prevBtn.addEventListener('click', () => {
+      portfolioSlider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      portfolioSlider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    });
+  }
+</script>
 </body>
 </html>
