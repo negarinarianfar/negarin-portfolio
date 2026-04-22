@@ -590,3 +590,10 @@
   width: fit-content;
 
 }
+ .project-btn1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-bottom: 18px;
+}
