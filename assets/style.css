@@ -551,3 +551,31 @@
     font-size: 1.3rem;
   }
 }
+.portfolio-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.portfolio-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-btn {
+  margin-top: auto; /* این مهم‌ترین خطه */
+}
+.portfolio-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.portfolio-meta .tag {
+  margin: 0;
+}
+.portfolio-slider .portfolio-item {
+  height: 100%;
+}
