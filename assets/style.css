@@ -540,42 +540,57 @@
     gap: 8px;
   }
 
-  .portfolio-slider {
-    grid-auto-columns: 100%;
-    gap: 16px;
-  }
-
   .slider-btn {
     width: 42px;
     height: 42px;
     font-size: 1.3rem;
   }
+
+.portfolio-slider {
+  align-items: stretch;
 }
+
 .portfolio-item {
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: 520px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.portfolio-cover {
+  height: 220px;
+  flex-shrink: 0;
 }
 
 .portfolio-content {
   display: flex;
   flex-direction: column;
   flex: 1;
+  padding: 22px;
 }
 
-.project-btn {
-  margin-top: auto; /* این مهم‌ترین خطه */
+.portfolio-content p {
+  margin-bottom: 16px;
 }
+
 .portfolio-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 12px;
+  margin-top: 0;
+  margin-bottom: 18px;
 }
 
 .portfolio-meta .tag {
   margin: 0;
 }
-.portfolio-slider .portfolio-item {
-  height: 100%;
+
+.project-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: auto;
 }
