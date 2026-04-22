@@ -7,6 +7,28 @@
   <meta name="description" content="Professionelles Webdesign-Portfolio für kleine Unternehmen in Deutschland. Moderne, responsive und benutzerfreundliche Websites." />
 <link rel="stylesheet" href="assets/style.css">
 </head>
+  <script>
+  const portfolioSlider = document.getElementById('portfolioSlider');
+  const prevBtn = document.querySelector('.slider-btn-prev');
+  const nextBtn = document.querySelector('.slider-btn-next');
+
+  if (portfolioSlider && prevBtn && nextBtn) {
+    const getScrollAmount = () => {
+      const firstCard = portfolioSlider.querySelector('.portfolio-item');
+      if (!firstCard) return 300;
+      const gap = window.innerWidth <= 700 ? 16 : 22;
+      return firstCard.offsetWidth + gap;
+    };
+
+    prevBtn.addEventListener('click', () => {
+      portfolioSlider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      portfolioSlider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    });
+  }
+</script>
 <body>
   <header>
     <div class="container nav">
@@ -111,121 +133,120 @@
           </div>
         </div>
 
-        <div class="portfolio-grid">
-          <article class="card portfolio-item">
-            <div class="portfolio-cover">
-              <span class="portfolio-label">Café / Gastronomie</span>
-            </div>
-            <div class="portfolio-content">
-              <h3>Café Website</h3>
-              <p>Elegante Website für ein Café mit emotionalem Design, Menü-Bereich, Kontaktinformationen und mobilfreundlicher Struktur.</p>
-              <div class="portfolio-meta">
-                <span class="tag">Responsive</span>
-                <span class="tag">Modern UI</span>
-                <span class="tag">Local Business</span>
-                <a href="/projects/Barbersite/" target="_blank">
-  Projekt ansehen
-</a>
-              </div>
-            </div>
-          </article>
+        <section id="portfolio">
+  <div class="container">
+    <div class="section-head">
+      <div>
+        <h2>Ausgewählte Projekte</h2>
+        <p>Hier sehen Sie mehrere Beispielprojekte aus verschiedenen Branchen. Über die Navigation können weitere Referenzprojekte angesehen werden.</p>
+      </div>
+    </div>
 
-          <article class="card portfolio-item">
-            <div class="portfolio-cover">
-              <span class="portfolio-label">Reinigung / Service</span>
-            </div>
-            <div class="portfolio-content">
-              <h3>Reinigungsservice</h3>
-              <p>Klare und vertrauenswürdige Website für ein Dienstleistungsunternehmen mit Fokus auf Leistungen, Vorteile und Kontaktanfragen.</p>
-              <div class="portfolio-meta">
-                <span class="tag">Service Design</span>
-                <span class="tag">Lead-Fokus</span>
-                <span class="tag">Mobile First</span>
-                <a href="/projects/Barbersite/" target="_blank">
-  Projekt ansehen
-</a>
-              </div>
-            </div>
-          </article>
+    <div class="portfolio-slider-wrap">
+      <button class="slider-btn slider-btn-prev" aria-label="Vorherige Projekte">‹</button>
 
-          <article class="card portfolio-item">
-            <div class="portfolio-cover">
-              <span class="portfolio-label">Fitness / Studio</span>
+      <div class="portfolio-slider" id="portfolioSlider">
+        <article class="card portfolio-item">
+          <div class="portfolio-cover">
+            <span class="portfolio-label">Café / Gastronomie</span>
+          </div>
+          <div class="portfolio-content">
+            <h3>Café Website</h3>
+            <p>Elegante Website für ein Café mit emotionalem Design, Menü-Bereich, Kontaktinformationen und mobilfreundlicher Struktur.</p>
+            <div class="portfolio-meta">
+              <span class="tag">Responsive</span>
+              <span class="tag">Modern UI</span>
+              <span class="tag">Local Business</span>
             </div>
-            <div class="portfolio-content">
-              <h3>Fitness Studio</h3>
-              <p>Kraftvolle und moderne Website mit markanter Optik, Angebotsübersicht und starker visueller Präsenz für lokale Kundengewinnung.</p>
-              <div class="portfolio-meta">
-                <span class="tag">Branding</span>
-                <span class="tag">Strong Visuals</span>
-                <span class="tag">UX</span>
-                <a href="/projects/Barbersite/" target="_blank">
-  Projekt ansehen
-</a>
-              </div>
-            </div>
-          </article> 
+            <a class="project-btn" href="/projects/cafe/" target="_blank">Projekt ansehen</a>
+          </div>
+        </article>
 
-      
-<div class="portfolio-grid">
-          <article class="card portfolio-item">
-            <div class="portfolio-cover">
-              <span class="portfolio-label">Café / Gastronomie</span>
+        <article class="card portfolio-item">
+          <div class="portfolio-cover">
+            <span class="portfolio-label">Reinigung / Service</span>
+          </div>
+          <div class="portfolio-content">
+            <h3>Reinigungsservice</h3>
+            <p>Klare und vertrauenswürdige Website für ein Dienstleistungsunternehmen mit Fokus auf Leistungen, Vorteile und Kontaktanfragen.</p>
+            <div class="portfolio-meta">
+              <span class="tag">Service Design</span>
+              <span class="tag">Lead-Fokus</span>
+              <span class="tag">Mobile First</span>
             </div>
-            <div class="portfolio-content">
-              <h3>Café Website</h3>
-              <p>Elegante Website für ein Café mit emotionalem Design, Menü-Bereich, Kontaktinformationen und mobilfreundlicher Struktur.</p>
-              <div class="portfolio-meta">
-                <span class="tag">Responsive</span>
-                <span class="tag">Modern UI</span>
-                <span class="tag">Local Business</span>
-                <a href="/projects/Barbersite/" target="_blank">
-  Projekt ansehen
-</a>
-              </div>
-            </div>
-          </article>
+            <a class="project-btn" href="/projects/cleaning/" target="_blank">Projekt ansehen</a>
+          </div>
+        </article>
 
-</div>
-          <article class="card portfolio-item">
-            <div class="portfolio-cover">
-              <span class="portfolio-label">Reinigung / Service</span>
+        <article class="card portfolio-item">
+          <div class="portfolio-cover">
+            <span class="portfolio-label">Fitness / Studio</span>
+          </div>
+          <div class="portfolio-content">
+            <h3>Fitness Studio</h3>
+            <p>Kraftvolle und moderne Website mit markanter Optik, Angebotsübersicht und starker visueller Präsenz für lokale Kundengewinnung.</p>
+            <div class="portfolio-meta">
+              <span class="tag">Branding</span>
+              <span class="tag">Strong Visuals</span>
+              <span class="tag">UX</span>
             </div>
-            <div class="portfolio-content">
-              <h3>Reinigungsservice</h3>
-              <p>Klare und vertrauenswürdige Website für ein Dienstleistungsunternehmen mit Fokus auf Leistungen, Vorteile und Kontaktanfragen.</p>
-              <div class="portfolio-meta">
-                <span class="tag">Service Design</span>
-                <span class="tag">Lead-Fokus</span>
-                <span class="tag">Mobile First</span>
-                <a href="/projects/Barbersite/" target="_blank">
-  Projekt ansehen
-</a>
-              </div>
-            </div>
-          </article>
+            <a class="project-btn" href="/projects/fitness/" target="_blank">Projekt ansehen</a>
+          </div>
+        </article>
 
-
-          <article class="card portfolio-item">
-            <div class="portfolio-cover">
-              <span class="portfolio-label">Fitness / Studio</span>
+        <article class="card portfolio-item">
+          <div class="portfolio-cover">
+            <span class="portfolio-label">Barbershop</span>
+          </div>
+          <div class="portfolio-content">
+            <h3>Barbershop Website</h3>
+            <p>Modernes Konzept für einen lokalen Barbershop mit starker Bildsprache, klarer Struktur und hochwertigem Markenauftritt.</p>
+            <div class="portfolio-meta">
+              <span class="tag">Luxury Style</span>
+              <span class="tag">Local Brand</span>
+              <span class="tag">Responsive</span>
             </div>
-            <div class="portfolio-content">
-              <h3>Fitness Studio</h3>
-              <p>Kraftvolle und moderne Website mit markanter Optik, Angebotsübersicht und starker visueller Präsenz für lokale Kundengewinnung.</p>
-              <div class="portfolio-meta">
-                <span class="tag">Branding</span>
-                <span class="tag">Strong Visuals</span>
-                <span class="tag">UX</span>
-                <a href="/projects/Barbersite/" target="_blank">
-  Projekt ansehen
-</a>
-              </div>
-            </div>
-          </article>
+            <a class="project-btn" href="/projects/Barbersite/" target="_blank">Projekt ansehen</a>
+          </div>
+        </article>
 
-       </div>
-     </div>
+        <article class="card portfolio-item">
+          <div class="portfolio-cover">
+            <span class="portfolio-label">Restaurant</span>
+          </div>
+          <div class="portfolio-content">
+            <h3>Restaurant Website</h3>
+            <p>Stilvolle Restaurant-Präsenz mit klarer Menüstruktur, Reservierungsnähe und modernem Gesamtbild.</p>
+            <div class="portfolio-meta">
+              <span class="tag">Elegant</span>
+              <span class="tag">Menu Layout</span>
+              <span class="tag">Mobile Ready</span>
+            </div>
+            <a class="project-btn" href="/projects/restaurant/" target="_blank">Projekt ansehen</a>
+          </div>
+        </article>
+
+        <article class="card portfolio-item">
+          <div class="portfolio-cover">
+            <span class="portfolio-label">Beauty / Salon</span>
+          </div>
+          <div class="portfolio-content">
+            <h3>Beauty Salon</h3>
+            <p>Weiches und hochwertiges Design für einen Beautysalon mit Fokus auf Vertrauen, Leistungen und Kontaktaufnahme.</p>
+            <div class="portfolio-meta">
+              <span class="tag">Soft Branding</span>
+              <span class="tag">Clean Layout</span>
+              <span class="tag">Modern</span>
+            </div>
+            <a class="project-btn" href="/projects/beauty/" target="_blank">Projekt ansehen</a>
+          </div>
+        </article>
+      </div>
+
+      <button class="slider-btn slider-btn-next" aria-label="Nächste Projekte">›</button>
+    </div>
+  </div>
+</section>
     </section>
 
     <section id="vorteile">
