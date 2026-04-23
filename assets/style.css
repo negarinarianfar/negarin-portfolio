@@ -567,6 +567,10 @@
   font-size: 0.85rem;
   backdrop-filter: blur(6px);
 }
+ .profile img {
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(124, 92, 255, 0.15)
+ }
 
 
 
