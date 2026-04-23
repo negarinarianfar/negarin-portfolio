@@ -576,6 +576,9 @@
   transform: translateY(0);
   box-shadow: 0 8px 18px rgba(111, 91, 255, 0.22);
 }
+ .project-preview {
+  border-radius: 900px;
+ }
 
 
 
