@@ -516,26 +516,24 @@
   background-image: linear-gradient(135deg, #5b46f0, #8466ff) !important;
 }
 
-.portfolio-content .project-btn {
-  display: inline-flex !important;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
-  margin-top: auto !important;
-  padding: 13px 24px !important;
-  border-radius: 999px !important;
-  background: linear-gradient(135deg, #6f5bff, #9b7cff) !important;
-  color: #ffffff !important;
-  font-size: 15px !important;
-  font-weight: 700 !important;
-  text-decoration: none !important;
-  border: none !important;
-  box-shadow: 0 14px 30px rgba(111, 91, 255, 0.32) !important;
+.project-btn {
+  position: relative;
+  overflow: hidden;
 }
 
-.portfolio-content .project-btn:hover {
-  transform: translateY(-3px);
-  background: linear-gradient(135deg, #5a46e8, #8364ff) !important;
+.project-btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  top: 0;
+  left: -100%;
+  transition: 0.4s;
+}
+
+.project-btn:hover::after {
+  left: 100%;
 }
 
 
