@@ -470,6 +470,14 @@
   padding: 0;
   overflow: hidden;
   scroll-snap-align: start;
+  background: linear-gradient(135deg, #f5f3ff, #ebe7ff);
+  border: 1px solid #e4ddff;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+.portfolio-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(124, 92, 255, 0.15);
 }
 
 .portfolio-content {
