@@ -515,24 +515,24 @@
   box-shadow: 0 16px 36px rgba(111, 91, 255, 0.36);
   background-image: linear-gradient(135deg, #5b46f0, #8466ff) !important;
 }
-a.project-btn,
-.portfolio-content a.project-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: fit-content !important;
-  margin-top: 24px !important;
-  padding: 14px 26px !important;
-  border-radius: 999px !important;
-  background: linear-gradient(135deg, #6f5bff, #9b7cff) !important;
-  color: #ffffff !important;
-  font-size: 15px !important;
-  font-weight: 700 !important;
-  line-height: 1 !important;
-  text-decoration: none !important;
-  border: none !important;
-  box-shadow: 0 14px 30px rgba(111, 91, 255, 0.32) !important;
-  transition: all 0.25s ease !important;
+.project-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: 24px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  background:  background: linear-gradient(135deg, var(--accent), #8f73ff);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  transition: 0.25s ease;
+ gap: 10px;   
 }
 
 a.project-btn:hover,
