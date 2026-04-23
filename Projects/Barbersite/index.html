@@ -176,12 +176,15 @@
       min-height: 420px;
       border-radius: 22px;
       border: 1px solid rgba(98, 82, 181, 0.10);
-      background: linear-gradient(135deg, #efe9ff, #d9d0ff 55%, #cfc2ff);
       overflow: hidden;
-      display: grid;
-      place-items: center;
       position: relative;
-    }
+}
+
+.project-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+}
 
     .preview-card {
       width: min(86%, 420px);
@@ -380,14 +383,8 @@
             <span class="dot"></span>
           </div>
           <div class="project-preview">
-            <div class="preview-card">
-              <div class="preview-line small"></div>
-              <div class="preview-line medium"></div>
-              <div class="preview-line large"></div>
-              <div class="preview-line large"></div>
-              <div class="preview-line medium"></div>
-            </div>
-          </div>
+  <img src="/assets/images/barbershop.jpg" alt="Barbershop Website Preview">
+</div>
         </div>
       </div>
     </section>
@@ -480,4 +477,3 @@
   </footer>
 </body>
 </html>
-
