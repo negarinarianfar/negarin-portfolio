@@ -263,40 +263,6 @@
       gap: 22px;
     }
 
-    .portfolio-item {
-      overflow: hidden;
-      padding: 0;
-    }
-
-    .portfolio-cover {
-      height: 220px;
-      background: linear-gradient(135deg, #efeafe, #ddd4ff 55%, #cfc3ff);
-      border-bottom: 1px solid var(--line);
-      position: relative;
-    }
-
-    .portfolio-label {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      background: rgba(111,91,255,0.08);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 999px;
-      padding: 8px 12px;
-      font-size: 0.85rem;
-    }
-
-    .portfolio-content {
-      padding: 22px;
-    }
-
-    .portfolio-meta {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin: 14px 0 0;
-    }
-
     .tag {
       border: 1px solid var(--line);
       border-radius: 999px;
@@ -445,17 +411,6 @@
       .section-head { align-items: start; }
     }
 
-
-.project-btn::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(255,255,255,0.2);
-  top: 0;
-  left: -100%;
-  transition: 0.4s;
-}
 .portfolio-slider-wrap {
   position: relative;
   display: flex;
@@ -577,7 +532,8 @@
   box-shadow: 0 8px 18px rgba(111, 91, 255, 0.22);
 }
  .project-preview {
-  border-radius: 999px;
+  border-radius: 20px;
+  overflow: hiden;
  }
  .card about-box {
   border-radius: 999px;
