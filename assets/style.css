@@ -593,3 +593,22 @@ margin-top: auto;
   transition: 0.25s ease;
   box-shadow: 0 12px 28px rgba(111, 91, 255, 0.20);
 }
+.project-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-btn::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.2);
+  top: 0;
+  left: -100%;
+  transition: 0.4s;
+}
+
+.project-btn:hover::after {
+  left: 100%;
+}
