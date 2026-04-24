@@ -5,14 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | Webdesign für kleine Unternehmen</title>
   <meta name="description" content="Professionelles Webdesign-Portfolio für kleine Unternehmen in Deutschland. Moderne, responsive und benutzerfreundliche Websites." />
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
- 
+
 <body>
   <header>
     <div class="container nav">
       <a href="#home" class="logo">Negarin <span>Webdesign</span></a>
-      <nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">☰</button>
+
+      <nav id="mainNav">
         <ul>
           <li><a href="#leistungen">Leistungen</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
@@ -31,14 +34,16 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Freelance Webdesignerin in Deutschland</div>
-          <h2>Moderne Websites für Unternehmen und Selbstständige</h2>
+          <h1>Moderne Websites für Unternehmen und Selbstständige</h1>
           <p class="lead">
-            Ich gestalte professionelle, responsive und benutzerfreundliche Websites mit Fokus auf klares Design, gute Struktur und einen überzeugenden ersten Eindruck. Diese Seite zeigt meine Arbeitsweise, meine Leistungen und ausgewählte Beispielprojekte.
+            Ich gestalte professionelle, responsive und benutzerfreundliche Websites mit Fokus auf klares Design, gute Struktur und einen überzeugenden ersten Eindruck.
           </p>
+
           <div class="hero-actions">
             <a class="btn" href="#portfolio">Portfolio Ansehen</a>
             <a class="btn secondary" href="#kontakt">Projekt Anfragen</a>
           </div>
+
           <div class="stats">
             <div class="stat">
               <strong>Modern</strong>
@@ -56,50 +61,39 @@
         </div>
 
         <div class="hero-visual">
-  <div class="browser-mockup">
-    <div class="browser-top">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
+          <div class="browser-mockup">
+            <div class="browser-top">
+              <span></span><span></span><span></span>
+            </div>
 
-    <div class="mockup-content">
-      <div class="mockup-header"></div>
+            <div class="mockup-content">
+              <div class="mockup-header"></div>
 
-      <div class="mockup-grid">
-        <div class="mockup-card large">
-          <p>Restaurant Website</p>
+              <div class="mockup-grid">
+                <div class="mockup-card large">
+                  <p>Restaurant Website</p>
+                </div>
+                <div class="mockup-card beauty">
+                  <p>Beauty Studio</p>
+                </div>
+                <div class="mockup-card service">
+                  <p>Reinigungsservice</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="floating-card top-card">Responsive Design</div>
+          <div class="floating-card bottom-card">Moderne Website</div>
         </div>
-
-        <div class="mockup-card">
-          <p>Beauty Studio</p>
-        </div>
-
-        <div class="mockup-card">
-          <p>Reinigungsservice</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="floating-card top-card">
-    Responsive Design
-  </div>
-
-  <div class="floating-card bottom-card">
-    Moderne Website
-  </div>
-</div>
       </div>
     </section>
 
     <section id="leistungen">
       <div class="container">
         <div class="section-head">
-          <div>
-            <h2>Leistungen</h2>
-            <p>Ich unterstütze Unternehmen dabei, online professionell aufzutreten und potenzielle Kundinnen und Kunden mit einer klaren und modernen Website zu überzeugen.</p>
-          </div>
+          <h2>Leistungen</h2>
+          <p>Ich unterstütze Unternehmen dabei, online professionell aufzutreten und potenzielle Kundinnen und Kunden mit einer klaren und modernen Website zu überzeugen.</p>
         </div>
 
         <div class="grid-3">
@@ -112,7 +106,7 @@
           <article class="card">
             <div class="service-icon">◫</div>
             <h3>Landing Pages</h3>
-            <p>Verkaufsstarke und übersichtliche Seiten für Dienstleistungen, Kampagnen oder lokale Unternehmen mit klarem Fokus auf Anfragen.</p>
+            <p>Verkaufsstarke und übersichtliche Seiten für Dienstleistungen, Kampagnen oder lokale Unternehmen.</p>
           </article>
 
           <article class="card">
@@ -124,112 +118,88 @@
       </div>
     </section>
 
-        <section id="portfolio">
-  <div class="container">
-    <div class="section-head">
-      <div>
-        <h2>Ausgewählte Projekte</h2>
-        <p>Hier sehen Sie mehrere Beispielprojekte aus verschiedenen Branchen. Über die Navigation können weitere Referenzprojekte angesehen werden.</p>
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <h2>Ausgewählte Projekte</h2>
+          <p>Hier sehen Sie mehrere Beispielprojekte aus verschiedenen Branchen.</p>
+        </div>
+
+        <div class="portfolio-slider-wrap">
+          <button class="slider-btn slider-btn-prev" aria-label="Vorherige Projekte">‹</button>
+
+          <div class="portfolio-slider" id="portfolioSlider">
+            <article class="card portfolio-item">
+              <div class="portfolio-cover">
+                <span class="portfolio-label">Café</span>
+                <img src="assets/images/Coffeeshop/HeaderCoffee.jpg" alt="Café Website">
+              </div>
+              <div class="portfolio-content">
+                <p>Elegante Website für ein Café mit emotionalem Design, Menü-Bereich und mobilfreundlicher Struktur.</p>
+                <a class="project-btn" href="/Projects/Cafe/" target="_blank">Projekt Ansehen</a>
+              </div>
+            </article>
+
+            <article class="card portfolio-item">
+              <div class="portfolio-cover">
+                <span class="portfolio-label">Reinigungsservice</span>
+                <img src="assets/images/Services/HeaderServices.jpg" alt="Reinigungsservice Website">
+              </div>
+              <div class="portfolio-content">
+                <p>Klare und vertrauenswürdige Website für ein Dienstleistungsunternehmen mit Fokus auf Anfragen.</p>
+                <a class="project-btn" href="/Projects/Services/" target="_blank">Projekt Ansehen</a>
+              </div>
+            </article>
+
+            <article class="card portfolio-item">
+              <div class="portfolio-cover">
+                <span class="portfolio-label">Fitness Studio</span>
+                <img src="assets/images/GYm/HeaderGymsite.jpg" alt="Fitness Website">
+              </div>
+              <div class="portfolio-content">
+                <p>Kraftvolle Website mit markanter Optik, Angebotsübersicht und starker visueller Präsenz.</p>
+                <a class="project-btn" href="/Projects/Gym/" target="_blank">Projekt Ansehen</a>
+              </div>
+            </article>
+
+            <article class="card portfolio-item">
+              <div class="portfolio-cover">
+                <span class="portfolio-label">Barber</span>
+                <img src="assets/images/Barbersite/Header Barbersite.jpg" alt="Barbershop Website">
+              </div>
+              <div class="portfolio-content">
+                <p>Modernes Konzept für einen lokalen Barbershop mit starker Bildsprache und hochwertigem Auftritt.</p>
+                <a class="project-btn" href="/Projects/Barbersite/" target="_blank">Projekt Ansehen</a>
+              </div>
+            </article>
+
+            <article class="card portfolio-item">
+              <div class="portfolio-cover">
+                <span class="portfolio-label">Restaurant</span>
+                <img src="assets/images/Restaurant/pictures/Header Restaurantsite.jpg" alt="Restaurant Website">
+              </div>
+              <div class="portfolio-content">
+                <p>Stilvolle Restaurant-Präsenz mit klarer Menüstruktur, Bildern und Reservierungsnähe.</p>
+                <a class="project-btn" href="/Projects/Restauransite/" target="_blank">Projekt Ansehen</a>
+              </div>
+            </article>
+
+            <article class="card portfolio-item">
+              <div class="portfolio-cover">
+                <span class="portfolio-label">Beauty Studio</span>
+                <img src="assets/images/Beauty/HeaderBeauty.jpg" alt="Beauty Studio Website">
+              </div>
+              <div class="portfolio-content">
+                <p>Hochwertiges Design für einen Beautysalon mit Fokus auf Vertrauen, Leistungen und Kontaktaufnahme.</p>
+                <a class="project-btn" href="/Projects/Beauty/" target="_blank">Projekt Ansehen</a>
+              </div>
+            </article>
+          </div>
+
+          <button class="slider-btn slider-btn-next" aria-label="Nächste Projekte">›</button>
+        </div>
       </div>
-    </div>
-
-    <div class="portfolio-slider-wrap">
-      <button class="slider-btn slider-btn-prev" aria-label="Vorherige Projekte">‹</button>
-
-      <div class="portfolio-slider" id="portfolioSlider">
-        <article class="card portfolio-item">
-          <div class="portfolio-cover">
-            <span class="portfolio-label">Café</span>
-               <img src="../../assets/images/Coffeeshop/HeaderCoffee.jpg">
-          </div>
-          <div class="portfolio-content">
-            <p>Elegante Website für ein Café mit emotionalem Design, Menü-Bereich, Kontaktinformationen und mobilfreundlicher Struktur.</p>
-            <div class="portfolio-meta">
-              
-            </div>
-            <a class="project-btn" href="/Projects/Cafe'/" target="_blank">Projekt Ansehen</a>
-          </div>
-        </article>
-
-        <article class="card portfolio-item">
-          <div class="portfolio-cover">
-            <span class="portfolio-label">Reinigungsservice</span>
-           <img src="../../assets/images/Services/HeaderServices.jpg">
-          </div>
-          <div class="portfolio-content">
-           
-            <p>Klare und vertrauenswürdige Website für ein Dienstleistungsunternehmen mit Fokus auf Leistungen, Vorteile und Kontaktanfragen.</p>
-            <div class="portfolio-meta">
-            </div>
-            <a class="project-btn" href="/Projects/Services/" target="_blank">Projekt Ansehen</a>
-          </div>
-        </article>
-
-        <article class="card portfolio-item">
-          <div class="portfolio-cover">
-            <span class="portfolio-label">Fitness Studio</span>
-             <img src="../../assets/images/GYm/HeaderGymsite.jpg">
-          </div>
-          <div class="portfolio-content">
-            <p>Kraftvolle und moderne Website mit markanter Optik, Angebotsübersicht und starker visueller Präsenz für lokale Kundengewinnung.</p>
-            <div class="portfolio-meta">
-              
-            </div>
-            <a class="project-btn" href="/Projects/Gym/" target="_blank">Projekt Ansehen</a>
-          </div>
-        </article>
-
-        <article class="card portfolio-item">
-          <div class="portfolio-cover">
-            <span class="portfolio-label">Barber</span>
-             <img src="../../assets/images/Barbersite/Header Barbersite.jpg">
-          </div>
-          <div class="portfolio-content">
-          
-            <p>Modernes Konzept für einen lokalen Barbershop mit starker Bildsprache, klarer Struktur und hochwertigem Markenauftritt.</p>
-            <div class="portfolio-meta">
-             
-            </div>
-            <a class="project-btn" href="/Projects/Barbersite/" target="_blank">Projekt Ansehen</a>
-          </div>
-        </article>
-
-        <article class="card portfolio-item">
-          <div class="portfolio-cover">
-            <span class="portfolio-label">Restaurant</span>
-             <img src="../../assets/images/Restaurant/pictures/Header Restaurantsite.jpg">
-          </div>
-          <div class="portfolio-content">
-           
-            <p>Stilvolle Restaurant-Präsenz mit klarer Menüstruktur, ansprechenden Bildern, Reservierungsnähe und modernem Gesamtbild.</p>
-            <div class="portfolio-meta">
-             
-            </div>
-            <a class="project-btn" href="/projects/Restauransite/" target="_blank">Projekt Ansehen</a>
-          </div>
-        </article>
-
-        <article class="card portfolio-item">
-          <div class="portfolio-cover">
-            <span class="portfolio-label">Beauty Studio</span>
-             <img src="../../assets/images/Beauty/HeaderBeauty.jpg">
-          </div>
-          <div class="portfolio-content">
-           
-            <p>Weiches und hochwertiges Design für einen Beautysalon mit Fokus auf Vertrauen, Leistungen und Kontaktaufnahme.</p>
-            <div class="portfolio-meta">
-             
-            </div>
-            <a class="project-btn" href="/Projects/Beauty/" target="_blank">Projekt Ansehen</a>
-          </div>
-        </article>
-      </div>
-
-      <button class="slider-btn slider-btn-next" aria-label="Nächste Projekte">›</button>
-    </div>
-  </div>
-</section>
-   
+    </section>
 
     <section id="vorteile">
       <div class="container split">
@@ -237,11 +207,11 @@
           <h2>Warum mit mir arbeiten?</h2>
           <p>Mein Fokus liegt auf Websites, die nicht nur gut aussehen, sondern auch professionell wirken und Vertrauen schaffen.</p>
           <ul class="check-list">
-            <li>Modernes und sauberes Design für einen professionellen Auftritt</li>
+            <li>Modernes und sauberes Design</li>
             <li>Responsive Umsetzung für alle Geräte</li>
             <li>Klare Struktur für bessere Nutzerführung</li>
-            <li>Geeignet für kleine Unternehmen, Freelancer und lokale Services</li>
-            <li>Individuelle Gestaltung statt austauschbarer Standardlösung</li>
+            <li>Geeignet für kleine Unternehmen und lokale Services</li>
+            <li>Individuelle Gestaltung statt Standardlösung</li>
           </ul>
         </div>
 
@@ -261,10 +231,8 @@
     <section id="ablauf">
       <div class="container">
         <div class="section-head">
-          <div>
-            <h2>Ablauf der Zusammenarbeit</h2>
-            <p>Ein klarer Prozess sorgt für eine strukturierte, angenehme und effiziente Zusammenarbeit.</p>
-          </div>
+          <h2>Ablauf der Zusammenarbeit</h2>
+          <p>Ein klarer Prozess sorgt für eine strukturierte, angenehme und effiziente Zusammenarbeit.</p>
         </div>
 
         <div class="timeline">
@@ -272,7 +240,7 @@
             <div class="step-num">1</div>
             <div>
               <h3>Erstgespräch</h3>
-              <p>Wir besprechen Ihr Unternehmen, Ihre Ziele, Ihre Zielgruppe und die gewünschte Richtung für die Website.</p>
+              <p>Wir besprechen Ihr Unternehmen, Ihre Ziele, Ihre Zielgruppe und die gewünschte Richtung.</p>
             </div>
           </div>
 
@@ -280,7 +248,7 @@
             <div class="step-num">2</div>
             <div>
               <h3>Konzept & Design</h3>
-              <p>Ich entwickle ein passendes Webdesign mit Fokus auf Struktur, Wirkung, Lesbarkeit und modernes Erscheinungsbild.</p>
+              <p>Ich entwickle ein passendes Webdesign mit Fokus auf Struktur, Wirkung und modernes Erscheinungsbild.</p>
             </div>
           </div>
 
@@ -288,7 +256,7 @@
             <div class="step-num">3</div>
             <div>
               <h3>Umsetzung</h3>
-              <p>Die Website wird responsiv aufgebaut und für eine saubere Darstellung auf allen Geräten vorbereitet.</p>
+              <p>Die Website wird responsiv aufgebaut und für alle Geräte vorbereitet.</p>
             </div>
           </div>
 
@@ -296,7 +264,7 @@
             <div class="step-num">4</div>
             <div>
               <h3>Feedback & Übergabe</h3>
-              <p>Nach finalen Anpassungen erhalten Sie eine fertige Website, die professionell präsentiert werden kann.</p>
+              <p>Nach finalen Anpassungen erhalten Sie eine fertige Website für Ihren professionellen Auftritt.</p>
             </div>
           </div>
         </div>
@@ -307,17 +275,16 @@
       <div class="container">
         <div class="card about-box">
           <div class="profile">
-            <div class="project-preview">
-  <img src="../../assets/images/Profile.jpg" alt="Barbershop Website Preview">
-</div>
+            <img src="assets/images/Profile.jpg" alt="Negar Arianfar">
           </div>
+
           <div>
             <h2>Über Mich</h2>
             <p>
-              Ich bin Freelance Webdesignerin und erstelle moderne Websites für Unternehmen, lokale Dienstleister und Selbstständige. Mein Schwerpunkt liegt auf klarem Design, benutzerfreundlicher Struktur und einer professionellen Online-Präsenz.
+              Ich bin Freelance Webdesignerin und erstelle moderne Websites für Unternehmen, lokale Dienstleister und Selbstständige.
             </p>
             <p>
-              Ich arbeite mit einem besonderen Blick für Ästhetik, Übersichtlichkeit und digitale Wirkung. Mein Ziel ist es, Websites zu gestalten, die Vertrauen schaffen und Unternehmen online hochwertig präsentieren.
+              Mein Schwerpunkt liegt auf klarem Design, benutzerfreundlicher Struktur und einer professionellen Online-Präsenz.
             </p>
           </div>
         </div>
@@ -329,6 +296,7 @@
         <div class="card">
           <h2>Kontakt</h2>
           <p>Sie möchten mit mir zusammenarbeiten oder ein Projekt besprechen? Ich freue mich über Ihre Anfrage.</p>
+
           <div class="contact-list">
             <div class="contact-item"><strong>E-Mail:</strong> arianfarnegarin@gmail.com</div>
             <div class="contact-item"><strong>Telefon:</strong> +49 176 71296421</div>
@@ -340,71 +308,86 @@
         <div class="card">
           <h2>Projekt Anfragen</h2>
           <form id="contactForm" action="https://formspree.io/f/mykloyab" method="POST">
-  <input type="text" name="name" placeholder="Ihr Name" required />
-  <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required />
-  <input type="text" name="unternehmen" placeholder="Unternehmen / Branche" />
-  <textarea name="message" placeholder="Erzählen Sie kurz von Ihrem Projekt..." required></textarea>
-
-  <button type="submit" class="btn">Anfrage senden</button>
-</form>
-          <script>
-  const form = document.getElementById("contactForm");
-
-  form.addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    const data = new FormData(form);
-
-    await fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: {
-        "Accept": "application/json"
-      }
-    });
-
-    window.location.href = "danke.html";
-  });
-</script>
+            <input type="text" name="name" placeholder="Ihr Name" required />
+            <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required />
+            <input type="text" name="unternehmen" placeholder="Unternehmen / Branche" />
+            <textarea name="message" placeholder="Erzählen Sie kurz von Ihrem Projekt..." required></textarea>
+            <button type="submit" class="btn">Anfrage senden</button>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-  <div class="container footer-wrap">
-    <div class="footer-links">
-      <a href="/impressum/">Impressum</a>
-      <a href="/datenschutz/">Datenschutz</a>
+    <div class="container footer-wrap">
+      <div class="footer-links">
+        <a href="/impressum/">Impressum</a>
+        <a href="/datenschutz/">Datenschutz</a>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Negarin Webdesign. Alle Rechte vorbehalten.</div>
+        <div>Portfolio für Webdesign & Freelance-Präsentation</div>
+      </div>
     </div>
+  </footer>
 
-    <div class="footer-bottom">
-      <div>© 2026 Negarin Webdesign. Alle Rechte vorbehalten.</div>
-      <div>Portfolio für Webdesign & Freelance-Präsentation</div>
-    </div>
-  </div>
-</footer>
-   <script>
-  const portfolioSlider = document.getElementById('portfolioSlider');
-  const prevBtn = document.querySelector('.slider-btn-prev');
-  const nextBtn = document.querySelector('.slider-btn-next');
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
 
-  if (portfolioSlider && prevBtn && nextBtn) {
-    const getScrollAmount = () => {
-      const firstCard = portfolioSlider.querySelector('.portfolio-item');
-      if (!firstCard) return 300;
-      const gap = window.innerWidth <= 700 ? 16 : 22;
-      return firstCard.offsetWidth + gap;
-    };
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener("click", function () {
+        mainNav.classList.toggle("active");
+      });
 
-    prevBtn.addEventListener('click', () => {
-      portfolioSlider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-    });
+      mainNav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+          mainNav.classList.remove("active");
+        });
+      });
+    }
 
-    nextBtn.addEventListener('click', () => {
-      portfolioSlider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-    });
-  }
-</script>
+    const portfolioSlider = document.getElementById("portfolioSlider");
+    const prevBtn = document.querySelector(".slider-btn-prev");
+    const nextBtn = document.querySelector(".slider-btn-next");
+
+    if (portfolioSlider && prevBtn && nextBtn) {
+      const getScrollAmount = () => {
+        const firstCard = portfolioSlider.querySelector(".portfolio-item");
+        if (!firstCard) return 300;
+        return firstCard.offsetWidth + 22;
+      };
+
+      prevBtn.addEventListener("click", () => {
+        portfolioSlider.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
+      });
+
+      nextBtn.addEventListener("click", () => {
+        portfolioSlider.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+      });
+    }
+
+    const form = document.getElementById("contactForm");
+
+    if (form) {
+      form.addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const data = new FormData(form);
+
+        await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: {
+            "Accept": "application/json"
+          }
+        });
+
+        window.location.href = "danke.html";
+      });
+    }
+  </script>
 </body>
 </html>
