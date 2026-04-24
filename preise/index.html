@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Preise & Leistungen | Negarin Webdesign</title>
+  <title>Preise für Webdesign | Negarin Webdesign Mannheim</title>
 
   <style>
     :root {
@@ -12,25 +12,37 @@
       --text: #1f2440;
       --muted: #66708a;
       --accent: #6f5bff;
+      --accent-2: #9b7cff;
       --accent-soft: #ece8ff;
       --line: rgba(111, 91, 255, 0.14);
       --shadow: 0 18px 45px rgba(111, 91, 255, 0.12);
-      --radius: 24px;
+      --radius: 26px;
       --max: 1180px;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(111,91,255,0.12), transparent 30%),
+        radial-gradient(circle at top left, rgba(111,91,255,0.14), transparent 32%),
         linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
       line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      right: -120px;
+      bottom: -120px;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(111,91,255,0.22), transparent 65%);
+      z-index: -1;
+      animation: softGlow 7s ease-in-out infinite;
     }
 
     a {
@@ -44,10 +56,10 @@
     }
 
     header {
-      padding: 28px 0;
+      padding: 26px 0;
       border-bottom: 1px solid var(--line);
       background: rgba(255,255,255,0.78);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(14px);
       position: sticky;
       top: 0;
       z-index: 10;
@@ -70,17 +82,19 @@
     }
 
     .back-link {
-      padding: 11px 18px;
+      padding: 12px 20px;
       border-radius: 999px;
       background: var(--accent-soft);
       color: var(--accent);
       font-weight: 700;
       font-size: 0.92rem;
+      transition: 0.25s ease;
     }
 
     .hero {
-      padding: 80px 0 44px;
+      padding: 92px 0 48px;
       text-align: center;
+      animation: fadeUp 0.75s ease both;
     }
 
     .eyebrow {
@@ -94,29 +108,32 @@
     }
 
     h1 {
-      font-size: clamp(2.4rem, 5vw, 4.5rem);
-      line-height: 1.1;
+      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      line-height: 1.08;
       margin: 0 0 18px;
+      letter-spacing: -1.5px;
     }
 
     .hero p {
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
       color: var(--muted);
-      font-size: 1.08rem;
+      font-size: 1.1rem;
     }
 
     section {
-      padding: 42px 0;
+      padding: 44px 0;
     }
 
     .section-title {
-      margin-bottom: 26px;
+      margin-bottom: 28px;
+      animation: fadeUp 0.75s ease both;
     }
 
     .section-title h2 {
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-size: clamp(1.85rem, 3vw, 2.6rem);
       margin: 0 0 10px;
+      letter-spacing: -0.7px;
     }
 
     .section-title p {
@@ -138,11 +155,19 @@
     }
 
     .card {
-      background: rgba(255,255,255,0.92);
+      background: rgba(255,255,255,0.88);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 28px;
       box-shadow: var(--shadow);
+      animation: fadeUp 0.75s ease both;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(111, 91, 255, 0.18);
+      border-color: rgba(111, 91, 255, 0.32);
     }
 
     .service-card h3,
@@ -160,9 +185,11 @@
     .price {
       display: inline-block;
       margin-top: 8px;
-      font-size: 1.4rem;
-      font-weight: 800;
-      color: var(--accent);
+      font-size: 1.45rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .package-card {
@@ -175,14 +202,26 @@
       transform: translateY(-8px);
     }
 
+    .package-card.featured:hover {
+      transform: translateY(-14px);
+    }
+
+    .package-card.featured::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(111,91,255,0.08), transparent 45%);
+      pointer-events: none;
+    }
+
     .badge {
       display: inline-block;
       padding: 7px 12px;
       border-radius: 999px;
-      background: var(--accent);
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
       color: white;
       font-size: 0.82rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 14px;
     }
 
@@ -197,7 +236,7 @@
     li {
       color: var(--muted);
       position: relative;
-      padding-left: 26px;
+      padding-left: 28px;
     }
 
     li::before {
@@ -206,7 +245,7 @@
       left: 0;
       top: 0;
       color: var(--accent);
-      font-weight: 800;
+      font-weight: 900;
     }
 
     .note {
@@ -216,19 +255,21 @@
       padding: 28px;
       color: var(--muted);
       margin-top: 26px;
+      animation: fadeUp 0.75s ease both;
     }
 
     .cta {
       text-align: center;
-      padding: 76px 0 90px;
+      padding: 76px 0 92px;
     }
 
     .cta-box {
       background: linear-gradient(135deg, #ffffff, #eee9ff);
       border: 1px solid var(--line);
-      border-radius: 30px;
-      padding: 42px;
+      border-radius: 34px;
+      padding: 46px;
       box-shadow: var(--shadow);
+      animation: fadeUp 0.75s ease both;
     }
 
     .cta h2 {
@@ -246,18 +287,19 @@
       display: inline-flex;
       justify-content: center;
       align-items: center;
-      padding: 14px 26px;
+      padding: 15px 28px;
       border-radius: 999px;
-      background: linear-gradient(135deg, var(--accent), #8f73ff);
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
       color: white;
       font-weight: 800;
       box-shadow: 0 14px 30px rgba(111, 91, 255, 0.28);
       transition: 0.25s ease;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 38px rgba(111, 91, 255, 0.36);
+    .btn:hover,
+    .back-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px rgba(111, 91, 255, 0.22);
     }
 
     footer {
@@ -266,6 +308,35 @@
       color: var(--muted);
       font-size: 0.9rem;
       text-align: center;
+    }
+
+    .service-card:nth-child(1),
+    .package-card:nth-child(1) { animation-delay: 0.05s; }
+
+    .service-card:nth-child(2),
+    .package-card:nth-child(2) { animation-delay: 0.12s; }
+
+    .service-card:nth-child(3),
+    .package-card:nth-child(3) { animation-delay: 0.19s; }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes softGlow {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+      50% {
+        transform: translate(18px, -18px) scale(1.08);
+      }
     }
 
     @media (max-width: 980px) {
@@ -277,6 +348,10 @@
       .package-card.featured {
         transform: none;
       }
+
+      .package-card.featured:hover {
+        transform: translateY(-8px);
+      }
     }
 
     @media (max-width: 640px) {
@@ -287,7 +362,7 @@
 
       .hero {
         text-align: left;
-        padding-top: 52px;
+        padding-top: 56px;
       }
 
       .hero p {
@@ -316,10 +391,10 @@
     <section class="hero">
       <div class="container">
         <span class="eyebrow">Preise & Leistungen</span>
-        <h1>Transparente Pakete für moderne Websites</h1>
+        <h1>Preise, Pakete & klare Leistungen</h1>
         <p>
-          Hier finden Sie Richtpreise für Webdesign, Landing Pages, Redesigns und laufende Betreuung.
-          Jedes Projekt wird individuell geplant und an die Ziele Ihres Unternehmens angepasst.
+          Wählen Sie ein passendes Paket für Ihren Webauftritt. Alle Preise sind transparent,
+          realistisch kalkuliert und je nach Projektumfang flexibel anpassbar.
         </p>
       </div>
     </section>
