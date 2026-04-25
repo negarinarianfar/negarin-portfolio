@@ -81,7 +81,7 @@ header {
 }
 
 .logo img {
-  height: 56px;       /* کنترل اصلی */
+  height: 210px;       /* کنترل اصلی */
   width: auto;
   max-width: 240px;   /* جلوگیری از کشیدگی زیاد */
   object-fit: contain;
