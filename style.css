@@ -81,7 +81,7 @@ header {
 }
 
 .logo img {
-  width: 160px;
+  width: 210px;
   height: auto;
   display: block;
 }
@@ -794,5 +794,10 @@ footer {
 
   .profile img {
     height: 300px;
+  }
+}
+@media (max-width: 520px) {
+  .logo img {
+    width: 170px;
   }
 }
