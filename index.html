@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio | Webdesign für kleine Unternehmen</title>
+
+  <title>Negarin Webdesign | Moderne Websites für kleine Unternehmen</title>
+
   <meta name="description" content="Professionelles Webdesign-Portfolio für kleine Unternehmen in Deutschland. Moderne, responsive und benutzerfreundliche Websites." />
+
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
   <header>
     <div class="container nav">
-      <a href="#home" class="logo">Negarin <span>Webdesign</span></a>
+      <a href="#home" class="logo" aria-label="Negarin Webdesign Startseite">
+        <img src="assets/images/negarin-logo-transparent.png" alt="Negarin Webdesign Logo">
+      </a>
 
       <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">☰</button>
 
@@ -32,9 +37,11 @@
   <main>
     <section class="hero" id="home">
       <div class="container hero-grid">
-        <div>
+        <div class="hero-text">
           <div class="eyebrow">Freelance Webdesignerin in Deutschland</div>
+
           <h1>Moderne Websites für Unternehmen und Selbstständige</h1>
+
           <p class="lead">
             Ich gestalte professionelle, responsive und benutzerfreundliche Websites mit Fokus auf klares Design, gute Struktur und einen überzeugenden ersten Eindruck.
           </p>
@@ -49,10 +56,12 @@
               <strong>Modern</strong>
               <span>Sauberes und professionelles Webdesign</span>
             </div>
+
             <div class="stat">
               <strong>Responsive</strong>
               <span>Optimiert für Desktop, Tablet und Smartphone</span>
             </div>
+
             <div class="stat">
               <strong>Zielorientiert</strong>
               <span>Websites mit Fokus auf Vertrauen und Anfragen</span>
@@ -63,7 +72,9 @@
         <div class="hero-visual">
           <div class="browser-mockup">
             <div class="browser-top">
-              <span></span><span></span><span></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
 
             <div class="mockup-content">
@@ -73,9 +84,11 @@
                 <div class="mockup-card large">
                   <p>Restaurant Website</p>
                 </div>
+
                 <div class="mockup-card beauty">
                   <p>Beauty Studio</p>
                 </div>
+
                 <div class="mockup-card service">
                   <p>Reinigungsservice</p>
                 </div>
@@ -93,7 +106,9 @@
       <div class="container">
         <div class="section-head">
           <h2>Leistungen</h2>
-          <p>Ich unterstütze Unternehmen dabei, online professionell aufzutreten und potenzielle Kundinnen und Kunden mit einer klaren und modernen Website zu überzeugen.</p>
+          <p>
+            Ich unterstütze Unternehmen dabei, online professionell aufzutreten und potenzielle Kundinnen und Kunden mit einer klaren und modernen Website zu überzeugen.
+          </p>
         </div>
 
         <div class="grid-3">
@@ -206,6 +221,7 @@
         <div class="card">
           <h2>Warum mit mir arbeiten?</h2>
           <p>Mein Fokus liegt auf Websites, die nicht nur gut aussehen, sondern auch professionell wirken und Vertrauen schaffen.</p>
+
           <ul class="check-list">
             <li>Modernes und sauberes Design</li>
             <li>Responsive Umsetzung für alle Geräte</li>
@@ -218,6 +234,7 @@
         <div class="card">
           <h2>Für Kunden und offizielle Präsentation geeignet</h2>
           <p>Diese Portfolio-Seite kann genutzt werden, um Kundinnen und Kunden Ihre Arbeit zu zeigen und gleichzeitig Ihre Selbstständigkeit professionell zu präsentieren.</p>
+
           <ul class="check-list">
             <li>Professionelle Darstellung Ihrer Leistungen</li>
             <li>Klare Positionierung als Webdesignerin</li>
@@ -307,10 +324,11 @@
 
         <div class="card">
           <h2>Projekt Anfragen</h2>
+
           <form id="contactForm" action="https://formspree.io/f/mykloyab" method="POST">
-            <input type="text" name="name" placeholder="Ihr Name" required />
-            <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required />
-            <input type="text" name="unternehmen" placeholder="Unternehmen / Branche" />
+            <input type="text" name="name" placeholder="Ihr Name" required>
+            <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+            <input type="text" name="unternehmen" placeholder="Unternehmen / Branche">
             <textarea name="message" placeholder="Erzählen Sie kurz von Ihrem Projekt..." required></textarea>
             <button type="submit" class="btn">Anfrage senden</button>
           </form>
@@ -321,6 +339,10 @@
 
   <footer>
     <div class="container footer-wrap">
+      <a href="#home" class="footer-logo">
+        <img src="assets/images/negarin-logo-transparent.png" alt="Negarin Webdesign Logo">
+      </a>
+
       <div class="footer-links">
         <a href="/impressum/">Impressum</a>
         <a href="/datenschutz/">Datenschutz</a>
@@ -377,15 +399,23 @@
 
         const data = new FormData(form);
 
-        await fetch(form.action, {
-          method: form.method,
-          body: data,
-          headers: {
-            "Accept": "application/json"
-          }
-        });
+        try {
+          const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+              "Accept": "application/json"
+            }
+          });
 
-        window.location.href = "danke.html";
+          if (response.ok) {
+            window.location.href = "danke.html";
+          } else {
+            alert("Leider ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.");
+          }
+        } catch (error) {
+          alert("Leider ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.");
+        }
       });
     }
   </script>
