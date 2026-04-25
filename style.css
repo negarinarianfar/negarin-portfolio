@@ -81,13 +81,13 @@ header {
 }
 
 .logo img {
-  height: 60px;       /* کنترل اصلی */
+  height: 70px;       /* کنترل اصلی */
   width: auto;
   
 }
 @media (max-width: 520px) {
   .logo img {
-    height: 50px;
+    height: 60px;
    
   }
 }
