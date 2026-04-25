@@ -81,15 +81,14 @@ header {
 }
 
 .logo img {
-  height: 210px;       /* کنترل اصلی */
+  height: 60px;       /* کنترل اصلی */
   width: auto;
-  max-width: 240px;   /* جلوگیری از کشیدگی زیاد */
-  object-fit: contain;
+  
 }
 @media (max-width: 520px) {
   .logo img {
     height: 50px;
-    max-width: 200px;
+   
   }
 }
 
