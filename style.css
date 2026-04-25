@@ -81,13 +81,13 @@ header {
 }
 
 .logo img {
-  height: 48px;
-  width: auto;
-  object-fit: contain;
+  width: 230px;
+  height: auto;
+  display: block;
 }
 @media (max-width: 520px) {
   .logo img {
-    height: 44px;
+    width: 178px;
   }
 }
 
