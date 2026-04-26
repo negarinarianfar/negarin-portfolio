@@ -32,12 +32,24 @@
       flex-wrap: wrap;
     }
 
-    .logo {
-      font-weight: 800;
-      font-size: 1.1rem;
-      text-decoration: none;
-      color: #1d2340;
-    }
+     .logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo img {
+   width: 210px;
+  height: auto;
+  display: block;
+  
+}
+@media (max-width: 520px) {
+  .logo img {
+    width: 170px;
+   
+  }
+}
 
     .logo span {
       color: #6f5bff;
@@ -95,7 +107,9 @@
 
   <header>
     <div class="container top">
-      <a href="/" class="logo">Negarin <span>Webdesign</span></a>
+     <a class="logo" href="home" aria-label="Negarin Webdesign Startseite">
+      <img src="../../assets/images/negarin-logo-transparent.png" alt="Negarin Webdesign Logo">
+      </a>
       <a href="/" class="back-btn">Zurück zum Portfolio</a>
     </div>
   </header>
