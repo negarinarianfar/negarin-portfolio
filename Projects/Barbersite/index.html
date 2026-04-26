@@ -32,12 +32,24 @@
       flex-wrap: wrap;
     }
 
-    .logo {
-      font-weight: 800;
-      font-size: 1.1rem;
-      text-decoration: none;
-      color: #1d2340;
-    }
+     .logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo img {
+   width: 210px;
+  height: auto;
+  display: block;
+  
+}
+@media (max-width: 520px) {
+  .logo img {
+    width: 170px;
+   
+  }
+}
 
     .logo span {
       color: #6f5bff;
