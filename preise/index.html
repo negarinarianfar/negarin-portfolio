@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Preise für Webdesign | Negarin Webdesign Mannheim</title>
+  <meta name="description" content="Transparente Preise für Webdesign, Website-Pakete, Landing Pages, WordPress Setup, SEO und Website-Pflege von Negarin Webdesign in Mannheim." />
 
   <style>
     :root {
@@ -20,14 +22,20 @@
       --max: 1180px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(111,91,255,0.14), transparent 32%),
+        radial-gradient(circle at top left, rgba(111, 91, 255, 0.14), transparent 32%),
         linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
       line-height: 1.6;
       overflow-x: hidden;
@@ -40,7 +48,7 @@
       bottom: -120px;
       width: 360px;
       height: 360px;
-      background: radial-gradient(circle, rgba(111,91,255,0.22), transparent 65%);
+      background: radial-gradient(circle, rgba(111, 91, 255, 0.22), transparent 65%);
       z-index: -1;
       animation: softGlow 7s ease-in-out infinite;
     }
@@ -56,9 +64,9 @@
     }
 
     header {
-      padding: 26px 0;
+      padding: 24px 0;
       border-bottom: 1px solid var(--line);
-      background: rgba(255,255,255,0.78);
+      background: rgba(255, 255, 255, 0.82);
       backdrop-filter: blur(14px);
       position: sticky;
       top: 0;
@@ -74,7 +82,7 @@
 
     .logo {
       font-size: 1.15rem;
-      font-weight: 800;
+      font-weight: 900;
     }
 
     .logo span {
@@ -86,13 +94,18 @@
       border-radius: 999px;
       background: var(--accent-soft);
       color: var(--accent);
-      font-weight: 700;
+      font-weight: 800;
       font-size: 0.92rem;
       transition: 0.25s ease;
     }
 
+    .back-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px rgba(111, 91, 255, 0.18);
+    }
+
     .hero {
-      padding: 92px 0 48px;
+      padding: 92px 0 50px;
       text-align: center;
       animation: fadeUp 0.75s ease both;
     }
@@ -103,7 +116,7 @@
       border-radius: 999px;
       background: var(--accent-soft);
       color: var(--accent);
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 18px;
     }
 
@@ -155,7 +168,7 @@
     }
 
     .card {
-      background: rgba(255,255,255,0.88);
+      background: rgba(255, 255, 255, 0.9);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 28px;
@@ -198,7 +211,7 @@
     }
 
     .package-card.featured {
-      border: 2px solid rgba(111,91,255,0.45);
+      border: 2px solid rgba(111, 91, 255, 0.45);
       transform: translateY(-8px);
     }
 
@@ -210,7 +223,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(135deg, rgba(111,91,255,0.08), transparent 45%);
+      background: linear-gradient(135deg, rgba(111, 91, 255, 0.08), transparent 45%);
       pointer-events: none;
     }
 
@@ -221,7 +234,7 @@
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       color: white;
       font-size: 0.82rem;
-      font-weight: 800;
+      font-weight: 900;
       margin-bottom: 14px;
     }
 
@@ -258,6 +271,10 @@
       animation: fadeUp 0.75s ease both;
     }
 
+    .note strong {
+      color: var(--text);
+    }
+
     .cta {
       text-align: center;
       padding: 76px 0 92px;
@@ -291,15 +308,14 @@
       border-radius: 999px;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       color: white;
-      font-weight: 800;
+      font-weight: 900;
       box-shadow: 0 14px 30px rgba(111, 91, 255, 0.28);
       transition: 0.25s ease;
     }
 
-    .btn:hover,
-    .back-link:hover {
+    .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 18px 38px rgba(111, 91, 255, 0.22);
+      box-shadow: 0 18px 38px rgba(111, 91, 255, 0.32);
     }
 
     footer {
@@ -308,22 +324,30 @@
       color: var(--muted);
       font-size: 0.9rem;
       text-align: center;
+      background: rgba(255, 255, 255, 0.55);
     }
 
     .service-card:nth-child(1),
-    .package-card:nth-child(1) { animation-delay: 0.05s; }
+    .package-card:nth-child(1) {
+      animation-delay: 0.05s;
+    }
 
     .service-card:nth-child(2),
-    .package-card:nth-child(2) { animation-delay: 0.12s; }
+    .package-card:nth-child(2) {
+      animation-delay: 0.12s;
+    }
 
     .service-card:nth-child(3),
-    .package-card:nth-child(3) { animation-delay: 0.19s; }
+    .package-card:nth-child(3) {
+      animation-delay: 0.19s;
+    }
 
     @keyframes fadeUp {
       from {
         opacity: 0;
         transform: translateY(24px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -334,6 +358,7 @@
       0%, 100% {
         transform: translate(0, 0) scale(1);
       }
+
       50% {
         transform: translate(18px, -18px) scale(1.08);
       }
@@ -372,6 +397,11 @@
       .card,
       .cta-box {
         padding: 24px;
+      }
+
+      .back-link {
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
@@ -440,9 +470,9 @@
           </div>
 
           <div class="card service-card">
-            <h3>Wartung & Support</h3>
+            <h3>Website-Pflege & Support</h3>
             <p>Regelmäßige kleine Anpassungen, Kontrolle, Pflege und technische Unterstützung.</p>
-            <span class="price">ab 59 € / Monat</span>
+            <span class="price">ab 39 € / Monat</span>
           </div>
         </div>
       </div>
@@ -463,6 +493,7 @@
             <h3>Starter Paket</h3>
             <p>Für kleine Projekte, persönliche Websites oder einfache Unternehmensseiten.</p>
             <span class="price">ab 750 €</span>
+
             <ul>
               <li>One-Pager oder bis zu 3 Seiten</li>
               <li>Responsive Design</li>
@@ -478,6 +509,7 @@
             <h3>Business Paket</h3>
             <p>Für lokale Unternehmen, die professionell auftreten und Anfragen gewinnen möchten.</p>
             <span class="price">ab 1.450 €</span>
+
             <ul>
               <li>Bis zu 6 Seiten</li>
               <li>Individuelles Webdesign</li>
@@ -493,6 +525,7 @@
             <h3>Premium Paket</h3>
             <p>Für umfangreichere Projekte mit stärkerem Design- und Strukturbedarf.</p>
             <span class="price">ab 2.400 €</span>
+
             <ul>
               <li>Bis zu 10 Seiten</li>
               <li>Individuelles Designkonzept</li>
@@ -516,34 +549,94 @@
     <section>
       <div class="container">
         <div class="section-title">
-          <h2>Betreuung & zusätzliche Leistungen</h2>
+          <h2>Website-Pflege & Support</h2>
           <p>
-            Nach dem Launch kann die Website weiter betreut, aktualisiert und verbessert werden.
+            Nach dem Launch kann Ihre Website regelmäßig gepflegt, aktualisiert und bei Bedarf angepasst werden.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card package-card">
+            <h3>Basic Support</h3>
+            <p>Für kleine Websites mit seltenen Änderungen.</p>
+            <span class="price">ab 39 € / Monat</span>
+
+            <ul>
+              <li>Kleine Textänderungen</li>
+              <li>Bildwechsel nach Bedarf</li>
+              <li>Technische Sichtprüfung</li>
+              <li>E-Mail-Support</li>
+            </ul>
+          </div>
+
+          <div class="card package-card featured">
+            <span class="badge">Empfohlen</span>
+            <h3>Standard Support</h3>
+            <p>Für Unternehmen mit regelmäßigen kleinen Anpassungen.</p>
+            <span class="price">ab 79 € / Monat</span>
+
+            <ul>
+              <li>Alle Leistungen aus Basic</li>
+              <li>Regelmäßige Inhaltsänderungen</li>
+              <li>Plugin-/System-Updates*</li>
+              <li>Monatliche Website-Prüfung</li>
+            </ul>
+          </div>
+
+          <div class="card package-card">
+            <h3>Premium Support</h3>
+            <p>Für Websites mit häufigerem Änderungsbedarf.</p>
+            <span class="price">ab 149 € / Monat</span>
+
+            <ul>
+              <li>Alle Leistungen aus Standard</li>
+              <li>Priorisierte Bearbeitung</li>
+              <li>Mehrere Änderungen pro Monat</li>
+              <li>Beratung zur Verbesserung der Website</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="note">
+          <strong>Hinweis:</strong>
+          Externe Kosten wie Hosting, Domain, Premium-Plugins, Lizenzen oder zusätzliche Tools sind nicht im Supportpreis enthalten und werden separat berechnet.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Zusätzliche Leistungen</h2>
+          <p>
+            Einzelne Anpassungen oder Beratungen können auch separat nach Aufwand gebucht werden.
           </p>
         </div>
 
         <div class="grid-2">
           <div class="card service-card">
-            <h3>Wartung Paket</h3>
-            <p>Für kleine laufende Anpassungen und regelmäßige Betreuung.</p>
-            <span class="price">ab 59 € / Monat</span>
-            <ul>
-              <li>Kleine Inhaltsänderungen</li>
-              <li>Technische Kontrolle</li>
-              <li>Fehlerprüfung</li>
-              <li>Kurze monatliche Betreuung</li>
-            </ul>
-          </div>
-
-          <div class="card service-card">
             <h3>Stundensatz</h3>
             <p>Für einzelne Anpassungen, Beratungen oder zusätzliche Aufgaben.</p>
             <span class="price">ab 45 € / Stunde</span>
+
             <ul>
               <li>Text- und Bildänderungen</li>
               <li>Kleine Layout-Anpassungen</li>
               <li>Beratung zu Struktur und Design</li>
               <li>Technische Unterstützung</li>
+            </ul>
+          </div>
+
+          <div class="card service-card">
+            <h3>Zusätzliche Unterseite</h3>
+            <p>Für weitere Seiten, die nachträglich ergänzt werden sollen.</p>
+            <span class="price">ab 120 € / Seite</span>
+
+            <ul>
+              <li>Design passend zur bestehenden Website</li>
+              <li>Einbindung von Texten und Bildern</li>
+              <li>Mobile Optimierung</li>
+              <li>Verlinkung im Menü</li>
             </ul>
           </div>
         </div>
