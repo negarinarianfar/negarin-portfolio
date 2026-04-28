@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Prise for Webdesign | Negarin Webdesign Mannheim</title>
+  <meta name="description" content="Transparente Preise für Webdesign, Website-Pakete, Landing Pages, WordPress Setup, SEO und Website-Pflege von Negarin Webdesign in Mannheim." />
+
+  <style>
+    :root {
+      --bg: #f7f5ff;
+      --card: #ffffff;
+      --text: #1f2440;
+      --muted: #66708a;
+      --accent: #6f5bff;
+      --accent-2: #9b7cff;
+      --accent-soft: #ece8ff;
+      --line: rgba(111, 91, 255, 0.14);
+      --shadow: 0 18px 45px rgba(111, 91, 255, 0.12);
+      --radius: 26px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(111, 91, 255, 0.14), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      right: -120px;
+      bottom: -120px;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(111, 91, 255, 0.22), transparent 65%);
+      z-index: -1;
+      animation: softGlow 7s ease-in-out infinite;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logo img {
+   width: 210px;
+  height: auto;
+  display: block;
+  
+}
+@media (max-width: 520px) {
+  .logo img {
+    width: 170px;
+   
+  }
+}
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .back-link {
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 0.92rem;
+      transition: 0.25s ease;
+    }
+
+    .back-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px rgba(111, 91, 255, 0.18);
+    }
+
+    .hero {
+      padding: 92px 0 50px;
+      text-align: center;
+      animation: fadeUp 0.75s ease both;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      line-height: 1.08;
+      margin: 0 0 18px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+
+    section {
+      padding: 44px 0;
+    }
+
+    .section-title {
+      margin-bottom: 28px;
+      animation: fadeUp 0.75s ease both;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.85rem, 3vw, 2.6rem);
+      margin: 0 0 10px;
+      letter-spacing: -0.7px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      animation: fadeUp 0.75s ease both;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(111, 91, 255, 0.18);
+      border-color: rgba(111, 91, 255, 0.32);
+    }
+
+    .service-card h3,
+    .package-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.3rem;
+    }
+
+    .service-card p,
+    .package-card p {
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+
+    .price {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 1.45rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .package-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .package-card.featured {
+      border: 2px solid rgba(111, 91, 255, 0.45);
+      transform: translateY(-8px);
+    }
+
+    .package-card.featured:hover {
+      transform: translateY(-14px);
+    }
+
+    .package-card.featured::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(111, 91, 255, 0.08), transparent 45%);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    li {
+      color: var(--muted);
+      position: relative;
+      padding-left: 28px;
+    }
+
+    li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .note {
+      background: linear-gradient(135deg, #f5f2ff, #ffffff);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      color: var(--muted);
+      margin-top: 26px;
+      animation: fadeUp 0.75s ease both;
+    }
+
+    .note strong {
+      color: var(--text);
+    }
+
+    .cta {
+      text-align: center;
+      padding: 76px 0 92px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #ffffff, #eee9ff);
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      padding: 46px;
+      box-shadow: var(--shadow);
+      animation: fadeUp 0.75s ease both;
+    }
+
+    .cta h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin: 0 0 14px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      margin: 0 auto 24px;
+      max-width: 680px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 28px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      font-weight: 900;
+      box-shadow: 0 14px 30px rgba(111, 91, 255, 0.28);
+      transition: 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px rgba(111, 91, 255, 0.32);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .service-card:nth-child(1),
+    .package-card:nth-child(1) {
+      animation-delay: 0.05s;
+    }
+
+    .service-card:nth-child(2),
+    .package-card:nth-child(2) {
+      animation-delay: 0.12s;
+    }
+
+    .service-card:nth-child(3),
+    .package-card:nth-child(3) {
+      animation-delay: 0.19s;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes softGlow {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(18px, -18px) scale(1.08);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .package-card.featured {
+        transform: none;
+      }
+
+      .package-card.featured:hover {
+        transform: translateY(-8px);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        text-align: left;
+        padding-top: 56px;
+      }
+
+      .hero p {
+        margin: 0;
+      }
+
+      .card,
+      .cta-box {
+        padding: 24px;
+      }
+
+      .back-link {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a class="logo" href="home" aria-label="Negarin Webdesign Startseite">
+       <img src="../assets/images/negarin-logo-transparent.png" alt="Negarin Webdesign Logo"></a>
+      <a class="back-link" href="/">Zurück zur Startseite</a>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Preise & Leistungen</span>
+        <h1>Preise, Pakete & klare Leistungen</h1>
+        <p>
+          Wählen Sie ein passendes Paket für Ihren Webauftritt. Alle Preise sind transparent,
+          realistisch kalkuliert und je nach Projektumfang flexibel anpassbar.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Einzelleistungen</h2>
+          <p>
+            Einzelne Leistungen können separat gebucht oder zu einem passenden Projektpaket kombiniert werden.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card service-card">
+            <h3>Landing Page / One-Pager</h3>
+            <p>Eine kompakte, verkaufsstarke Seite für Angebote, Dienstleistungen oder Kampagnen.</p>
+            <span class="price">ab 450 €</span>
+          </div>
+
+          <div class="card service-card">
+            <h3>Website für kleine Unternehmen</h3>
+            <p>Professioneller Webauftritt für lokale Unternehmen, Selbstständige oder Dienstleister.</p>
+            <span class="price">ab 950 €</span>
+          </div>
+
+          <div class="card service-card">
+            <h3>Website-Redesign</h3>
+            <p>Überarbeitung bestehender Websites für bessere Optik, Lesbarkeit und mobile Darstellung.</p>
+            <span class="price">ab 650 €</span>
+          </div>
+
+          <div class="card service-card">
+            <h3>WordPress Setup</h3>
+            <p>Einrichtung von WordPress, Theme, Grundstruktur und wichtigen Basisseiten.</p>
+            <span class="price">ab 350 €</span>
+          </div>
+
+          <div class="card service-card">
+            <h3>SEO Basis-Optimierung</h3>
+            <p>Grundlegende Optimierung von Struktur, Seitentiteln, Texten und technischer Basis.</p>
+            <span class="price">ab 250 €</span>
+          </div>
+
+          <div class="card service-card">
+            <h3>Website-Pflege & Support</h3>
+            <p>Regelmäßige kleine Anpassungen, Kontrolle, Pflege und technische Unterstützung.</p>
+            <span class="price">ab 39 € / Monat</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Website-Pakete</h2>
+          <p>
+            Die Pakete eignen sich besonders für kleine Unternehmen, lokale Dienstleister und Selbstständige,
+            die einen professionellen Online-Auftritt benötigen.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card package-card">
+            <h3>Starter Paket</h3>
+            <p>Für kleine Projekte, persönliche Websites oder einfache Unternehmensseiten.</p>
+            <span class="price">ab 750 €</span>
+
+            <ul>
+              <li>One-Pager oder bis zu 3 Seiten</li>
+              <li>Responsive Design</li>
+              <li>Kontaktbereich</li>
+              <li>Impressum & Datenschutz-Seiten</li>
+              <li>Basis SEO</li>
+              <li>1 Korrekturrunde</li>
+            </ul>
+          </div>
+
+          <div class="card package-card featured">
+            <span class="badge">Beliebt</span>
+            <h3>Business Paket</h3>
+            <p>Für lokale Unternehmen, die professionell auftreten und Anfragen gewinnen möchten.</p>
+            <span class="price">ab 1.450 €</span>
+
+            <ul>
+              <li>Bis zu 6 Seiten</li>
+              <li>Individuelles Webdesign</li>
+              <li>Kontaktformular</li>
+              <li>Mobile Optimierung</li>
+              <li>Basis SEO</li>
+              <li>Performance-Optimierung</li>
+              <li>2 Korrekturrunden</li>
+            </ul>
+          </div>
+
+          <div class="card package-card">
+            <h3>Premium Paket</h3>
+            <p>Für umfangreichere Projekte mit stärkerem Design- und Strukturbedarf.</p>
+            <span class="price">ab 2.400 €</span>
+
+            <ul>
+              <li>Bis zu 10 Seiten</li>
+              <li>Individuelles Designkonzept</li>
+              <li>WordPress oder statische Umsetzung</li>
+              <li>SEO-Grundstruktur</li>
+              <li>Bild- und Inhaltsintegration</li>
+              <li>Technische Optimierung</li>
+              <li>1 Monat Support inklusive</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="note">
+          <strong>Hinweis:</strong>
+          Alle Preise sind Richtwerte. Der endgültige Preis hängt vom Umfang, den gewünschten Funktionen,
+          den Inhalten und dem Aufwand des jeweiligen Projekts ab.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Website-Pflege & Support</h2>
+          <p>
+            Nach dem Launch kann Ihre Website regelmäßig gepflegt, aktualisiert und bei Bedarf angepasst werden.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card package-card">
+            <h3>Basic Support</h3>
+            <p>Für kleine Websites mit seltenen Änderungen.</p>
+            <span class="price">ab 39 € / Monat</span>
+
+            <ul>
+              <li>Kleine Textänderungen</li>
+              <li>Bildwechsel nach Bedarf</li>
+              <li>Technische Sichtprüfung</li>
+              <li>E-Mail-Support</li>
+            </ul>
+          </div>
+
+          <div class="card package-card featured">
+            <span class="badge">Empfohlen</span>
+            <h3>Standard Support</h3>
+            <p>Für Unternehmen mit regelmäßigen kleinen Anpassungen.</p>
+            <span class="price">ab 79 € / Monat</span>
+
+            <ul>
+              <li>Alle Leistungen aus Basic</li>
+              <li>Regelmäßige Inhaltsänderungen</li>
+              <li>Plugin-/System-Updates*</li>
+              <li>Monatliche Website-Prüfung</li>
+            </ul>
+          </div>
+
+          <div class="card package-card">
+            <h3>Premium Support</h3>
+            <p>Für Websites mit häufigerem Änderungsbedarf.</p>
+            <span class="price">ab 149 € / Monat</span>
+
+            <ul>
+              <li>Alle Leistungen aus Standard</li>
+              <li>Priorisierte Bearbeitung</li>
+              <li>Mehrere Änderungen pro Monat</li>
+              <li>Beratung zur Verbesserung der Website</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="note">
+          <strong>Hinweis:</strong>
+          Externe Kosten wie Hosting, Domain, Premium-Plugins, Lizenzen oder zusätzliche Tools sind nicht im Supportpreis enthalten und werden separat berechnet.
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Zusätzliche Leistungen</h2>
+          <p>
+            Einzelne Anpassungen oder Beratungen können auch separat nach Aufwand gebucht werden.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card service-card">
+            <h3>Stundensatz</h3>
+            <p>Für einzelne Anpassungen, Beratungen oder zusätzliche Aufgaben.</p>
+            <span class="price">ab 45 € / Stunde</span>
+
+            <ul>
+              <li>Text- und Bildänderungen</li>
+              <li>Kleine Layout-Anpassungen</li>
+              <li>Beratung zu Struktur und Design</li>
+              <li>Technische Unterstützung</li>
+            </ul>
+          </div>
+
+          <div class="card service-card">
+            <h3>Zusätzliche Unterseite</h3>
+            <p>Für weitere Seiten, die nachträglich ergänzt werden sollen.</p>
+            <span class="price">ab 120 € / Seite</span>
+
+            <ul>
+              <li>Design passend zur bestehenden Website</li>
+              <li>Einbindung von Texten und Bildern</li>
+              <li>Mobile Optimierung</li>
+              <li>Verlinkung im Menü</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Sie möchten ein Projekt besprechen?</h2>
+          <p>
+            Schreiben Sie mir gerne eine Nachricht. Ich erstelle Ihnen nach einem kurzen Austausch
+            ein passendes Angebot für Ihr Website-Projekt.
+          </p>
+          <a class="btn" href="/#kontakt">Projekt anfragen</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Negarin Webdesign. Alle Rechte vorbehalten.
+  </footer>
+
+</body>
+</html>
