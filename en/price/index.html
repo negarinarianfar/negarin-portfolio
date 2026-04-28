@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Web Design Pricing | Negarin Webdesign Mannheim</title>
-  <meta name="description" content="Transparent pricing for web design, landing pages, WordPress setup, SEO, and website maintenance. Professional websites for businesses in Germany." />
+  <meta name="description" content="Transparent pricing for web design, website packages, landing pages, WordPress setup, SEO, and website maintenance by Negarin Webdesign in Mannheim." />
 
   <style>
     :root {
@@ -26,169 +26,652 @@
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
       color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(111, 91, 255, 0.14), transparent 32%),
+        linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      right: -120px;
+      bottom: -120px;
+      width: 360px;
+      height: 360px;
+      background: radial-gradient(circle, rgba(111, 91, 255, 0.22), transparent 65%);
+      z-index: -1;
+      animation: softGlow 7s ease-in-out infinite;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     .container {
-      max-width: var(--max);
-      margin: auto;
-      padding: 40px 20px;
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .logo img {
+      width: 210px;
+      height: auto;
+      display: block;
+    }
+
+    @media (max-width: 520px) {
+      .logo img {
+        width: 170px;
+      }
+    }
+
+    .back-link {
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 0.92rem;
+      transition: 0.25s ease;
+    }
+
+    .back-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px rgba(111, 91, 255, 0.18);
+    }
+
+    .hero {
+      padding: 92px 0 50px;
+      text-align: center;
+      animation: fadeUp 0.75s ease both;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 18px;
     }
 
     h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
+      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      line-height: 1.08;
+      margin: 0 0 18px;
+      letter-spacing: -1.5px;
     }
 
-    p {
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
       color: var(--muted);
+      font-size: 1.1rem;
     }
 
-    .grid {
+    section {
+      padding: 44px 0;
+    }
+
+    .section-title {
+      margin-bottom: 28px;
+      animation: fadeUp 0.75s ease both;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.85rem, 3vw, 2.6rem);
+      margin: 0 0 10px;
+      letter-spacing: -0.7px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 720px;
+      margin: 0;
+    }
+
+    .grid-3 {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 25px;
-      margin-top: 40px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
     }
 
     .card {
-      background: var(--card);
-      padding: 25px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
+      padding: 28px;
       box-shadow: var(--shadow);
+      animation: fadeUp 0.75s ease both;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     }
 
-    .card h2 {
-      margin-top: 0;
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(111, 91, 255, 0.18);
+      border-color: rgba(111, 91, 255, 0.32);
+    }
+
+    .service-card h3,
+    .package-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.3rem;
+    }
+
+    .service-card p,
+    .package-card p {
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+
+    .price {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 1.45rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .package-card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .package-card.featured {
+      border: 2px solid rgba(111, 91, 255, 0.45);
+      transform: translateY(-8px);
+    }
+
+    .package-card.featured:hover {
+      transform: translateY(-14px);
+    }
+
+    .package-card.featured::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(111, 91, 255, 0.08), transparent 45%);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      font-size: 0.82rem;
+      font-weight: 900;
+      margin-bottom: 14px;
     }
 
     ul {
-      padding-left: 18px;
-      color: var(--muted);
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+      display: grid;
+      gap: 12px;
     }
 
-    button {
-      margin-top: 15px;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 20px;
+    li {
+      color: var(--muted);
+      position: relative;
+      padding-left: 28px;
+    }
+
+    li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .note {
+      background: linear-gradient(135deg, #f5f2ff, #ffffff);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      color: var(--muted);
+      margin-top: 26px;
+      animation: fadeUp 0.75s ease both;
+    }
+
+    .note strong {
+      color: var(--text);
+    }
+
+    .cta {
+      text-align: center;
+      padding: 76px 0 92px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #ffffff, #eee9ff);
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      padding: 46px;
+      box-shadow: var(--shadow);
+      animation: fadeUp 0.75s ease both;
+    }
+
+    .cta h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      margin: 0 0 14px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      margin: 0 auto 24px;
+      max-width: 680px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 15px 28px;
+      border-radius: 999px;
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
       color: white;
-      cursor: pointer;
-      font-weight: bold;
+      font-weight: 900;
+      box-shadow: 0 14px 30px rgba(111, 91, 255, 0.28);
+      transition: 0.25s ease;
     }
 
-    .section {
-      margin-top: 60px;
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 38px rgba(111, 91, 255, 0.32);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .service-card:nth-child(1),
+    .package-card:nth-child(1) {
+      animation-delay: 0.05s;
+    }
+
+    .service-card:nth-child(2),
+    .package-card:nth-child(2) {
+      animation-delay: 0.12s;
+    }
+
+    .service-card:nth-child(3),
+    .package-card:nth-child(3) {
+      animation-delay: 0.19s;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes softGlow {
+      0%, 100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(18px, -18px) scale(1.08);
+      }
+    }
+
+    @media (max-width: 980px) {
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .package-card.featured {
+        transform: none;
+      }
+
+      .package-card.featured:hover {
+        transform: translateY(-8px);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero {
+        text-align: left;
+        padding-top: 56px;
+      }
+
+      .hero p {
+        margin: 0;
+      }
+
+      .card,
+      .cta-box {
+        padding: 24px;
+      }
+
+      .back-link {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+  <header>
+    <div class="container nav">
+      <a class="logo" href="home" aria-label="Negarin Webdesign Homepage">
+        <img src="../assets/images/negarin-logo-transparent.png" alt="Negarin Webdesign Logo">
+      </a>
+      <a class="back-link" href="/">Back to Homepage</a>
+    </div>
+  </header>
 
-    <!-- HERO -->
-    <h1> Pricing for Your Website</h1>
-    <p>
-      Clear and simple pricing for modern, professional websites.  
-      Choose the package that fits your business needs.
-    </p>
+  <main>
 
-    <!-- PACKAGES -->
-    <div class="grid">
-
-      <div class="card">
-        <h2>Basic Website</h2>
-        <p>Perfect for small businesses and personal brands</p>
-
-        <ul>
-          <li>Up to 3 pages</li>
-          <li>Modern and clean design</li>
-          <li>Mobile responsive</li>
-          <li>Contact form</li>
-        </ul>
-
-        <p><strong>From €500</strong></p>
-        <button>Get a Quote</button>
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Pricing & Services</span>
+        <h1>Pricing, Packages & Clear Services</h1>
+        <p>
+          Choose the right package for your online presence. All prices are transparent,
+          realistically calculated, and can be flexibly adjusted depending on the scope of your project.
+        </p>
       </div>
+    </section>
 
-      <div class="card">
-        <h2>Business Website</h2>
-        <p>Ideal for growing businesses</p>
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Individual Services</h2>
+          <p>
+            Individual services can be booked separately or combined into a suitable project package.
+          </p>
+        </div>
 
-        <ul>
-          <li>Up to 6 pages</li>
-          <li>Custom design</li>
-          <li>Responsive on all devices</li>
-          <li>Basic SEO setup</li>
-          <li>Contact & inquiry forms</li>
-        </ul>
+        <div class="grid-3">
+          <div class="card service-card">
+            <h3>Landing Page / One-Pager</h3>
+            <p>A compact, conversion-focused page for offers, services, or campaigns.</p>
+            <span class="price">from €450</span>
+          </div>
 
-        <p><strong>From €900</strong></p>
-        <button>Start Your Project</button>
+          <div class="card service-card">
+            <h3>Website for Small Businesses</h3>
+            <p>A professional online presence for local businesses, freelancers, and service providers.</p>
+            <span class="price">from €950</span>
+          </div>
+
+          <div class="card service-card">
+            <h3>Website Redesign</h3>
+            <p>Improvement of existing websites for better design, readability, and mobile presentation.</p>
+            <span class="price">from €650</span>
+          </div>
+
+          <div class="card service-card">
+            <h3>WordPress Setup</h3>
+            <p>Setup of WordPress, theme, basic structure, and important core pages.</p>
+            <span class="price">from €350</span>
+          </div>
+
+          <div class="card service-card">
+            <h3>Basic SEO Optimization</h3>
+            <p>Basic optimization of structure, page titles, texts, and technical foundation.</p>
+            <span class="price">from €250</span>
+          </div>
+
+          <div class="card service-card">
+            <h3>Website Maintenance & Support</h3>
+            <p>Regular small updates, checks, maintenance, and technical support.</p>
+            <span class="price">from €39 / month</span>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="card">
-        <h2>Premium Website</h2>
-        <p>Advanced solution for serious businesses</p>
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Website Packages</h2>
+          <p>
+            These packages are especially suitable for small businesses, local service providers, and freelancers
+            who need a professional online presence.
+          </p>
+        </div>
 
-        <ul>
-          <li>Unlimited pages</li>
-          <li>Fully custom design</li>
-          <li>Advanced SEO optimization</li>
-          <li>Fast loading & performance optimized</li>
-          <li>Conversion-focused structure</li>
-        </ul>
+        <div class="grid-3">
+          <div class="card package-card">
+            <h3>Starter Package</h3>
+            <p>For small projects, personal websites, or simple business websites.</p>
+            <span class="price">from €750</span>
 
-        <p><strong>From €1400</strong></p>
-        <button>Get Started</button>
+            <ul>
+              <li>One-pager or up to 3 pages</li>
+              <li>Responsive design</li>
+              <li>Contact section</li>
+              <li>Legal Notice & Privacy Policy pages</li>
+              <li>Basic SEO</li>
+              <li>1 revision round</li>
+            </ul>
+          </div>
+
+          <div class="card package-card featured">
+            <span class="badge">Popular</span>
+            <h3>Business Package</h3>
+            <p>For local businesses that want to appear professional and generate inquiries.</p>
+            <span class="price">from €1,450</span>
+
+            <ul>
+              <li>Up to 6 pages</li>
+              <li>Custom web design</li>
+              <li>Contact form</li>
+              <li>Mobile optimization</li>
+              <li>Basic SEO</li>
+              <li>Performance optimization</li>
+              <li>2 revision rounds</li>
+            </ul>
+          </div>
+
+          <div class="card package-card">
+            <h3>Premium Package</h3>
+            <p>For larger projects with stronger design and structure requirements.</p>
+            <span class="price">from €2,400</span>
+
+            <ul>
+              <li>Up to 10 pages</li>
+              <li>Custom design concept</li>
+              <li>WordPress or static implementation</li>
+              <li>Basic SEO structure</li>
+              <li>Image and content integration</li>
+              <li>Technical optimization</li>
+              <li>1 month of support included</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="note">
+          <strong>Note:</strong>
+          All prices are guideline prices. The final price depends on the scope, desired features,
+          content, and workload of each individual project.
+        </div>
       </div>
+    </section>
 
-    </div>
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Website Maintenance & Support</h2>
+          <p>
+            After launch, your website can be regularly maintained, updated, and adjusted whenever needed.
+          </p>
+        </div>
 
-    <!-- EXTRAS -->
-    <div class="section">
-      <h2>Additional Services</h2>
+        <div class="grid-3">
+          <div class="card package-card">
+            <h3>Basic Support</h3>
+            <p>For small websites with occasional changes.</p>
+            <span class="price">from €39 / month</span>
 
-      <ul>
-        <li>Landing Page Design – from €300</li>
-        <li>Website Redesign – from €400</li>
-        <li>WordPress Setup – from €250</li>
-        <li>SEO Optimization – from €200</li>
-        <li>Website Maintenance – from €50/month</li>
-      </ul>
-    </div>
+            <ul>
+              <li>Small text changes</li>
+              <li>Image replacement when needed</li>
+              <li>Technical visual check</li>
+              <li>Email support</li>
+            </ul>
+          </div>
 
-    <!-- WHY ME -->
-    <div class="section">
-      <h2>Why Choose Me?</h2>
+          <div class="card package-card featured">
+            <span class="badge">Recommended</span>
+            <h3>Standard Support</h3>
+            <p>For businesses with regular small updates.</p>
+            <span class="price">from €79 / month</span>
 
-      <ul>
-        <li>Modern and professional design</li>
-        <li>Fast and reliable communication</li>
-        <li>Tailored solutions for your business</li>
-        <li>Focused on results and client satisfaction</li>
-      </ul>
-    </div>
+            <ul>
+              <li>All services from Basic</li>
+              <li>Regular content updates</li>
+              <li>Plugin / system updates*</li>
+              <li>Monthly website check</li>
+            </ul>
+          </div>
 
-    <!-- CTA -->
-    <div class="section">
-      <h2>Ready to Start Your Project?</h2>
+          <div class="card package-card">
+            <h3>Premium Support</h3>
+            <p>For websites that need more frequent updates.</p>
+            <span class="price">from €149 / month</span>
 
-      <p>
-        Let’s create a website that represents your business professionally  
-        and attracts more clients.
-      </p>
+            <ul>
+              <li>All services from Standard</li>
+              <li>Priority processing</li>
+              <li>Multiple changes per month</li>
+              <li>Consultation for website improvements</li>
+            </ul>
+          </div>
+        </div>
 
-      <button>Get a Free Quote</button>
-    </div>
+        <div class="note">
+          <strong>Note:</strong>
+          External costs such as hosting, domain, premium plugins, licenses, or additional tools are not included in the support price and will be charged separately.
+        </div>
+      </div>
+    </section>
 
-  </div>
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Additional Services</h2>
+          <p>
+            Individual adjustments or consultations can also be booked separately based on effort.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card service-card">
+            <h3>Hourly Rate</h3>
+            <p>For individual adjustments, consultations, or additional tasks.</p>
+            <span class="price">from €45 / hour</span>
+
+            <ul>
+              <li>Text and image changes</li>
+              <li>Small layout adjustments</li>
+              <li>Consultation on structure and design</li>
+              <li>Technical support</li>
+            </ul>
+          </div>
+
+          <div class="card service-card">
+            <h3>Additional Subpage</h3>
+            <p>For additional pages that should be added later.</p>
+            <span class="price">from €120 / page</span>
+
+            <ul>
+              <li>Design matching the existing website</li>
+              <li>Integration of texts and images</li>
+              <li>Mobile optimization</li>
+              <li>Menu linking</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Would You Like to Discuss a Project?</h2>
+          <p>
+            Feel free to send me a message. After a short exchange,
+            I will prepare a suitable offer for your website project.
+          </p>
+          <a class="btn" href="/#contact">Request a Project</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © 2026 Negarin Webdesign. All rights reserved.
+  </footer>
 
 </body>
 </html>
