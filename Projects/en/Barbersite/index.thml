@@ -110,7 +110,7 @@
      <a class="logo" href="home" aria-label="Negarin Webdesign Startseite">
       <img src="../../assets/images/negarin-logo-transparent.png" alt="Negarin Webdesign Logo">
       </a>
-      <a href="/" class="back-btn">Back to Home</a>
+      <a href="/en/" class="back-btn">Back to Home</a>
     </div>
   </header>
 
@@ -126,9 +126,9 @@
     </section>
 
     <section class="container gallery">
-       <img src="../../assets/images/Beauty/HeaderBeauty.jpg" alt="Beauty Website Header">
-<img src="../../assets/images/Beauty/HeaderBeauty.jpg" alt="Beauty Website Header">
-<img src="../../assets/images/Beauty/HeaderBeauty.jpg" alt="Beauty Website Header">
+       <img src="../../assets/images/Barbersite/Header Barbersite.jpg" alt="Barbershop Website Startseite">
+      <img src="../../assets/images/Barbersite/Kontact Barbersite.jpg" alt="Barbershop Website Kontakt">
+      <img src="../../assets/images/Barbersite/Footer Barbersite.jpg" alt="Barbershop Website Footer">
       
     </section>
   </main>
