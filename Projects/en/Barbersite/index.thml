@@ -110,7 +110,7 @@
      <a class="logo" href="home" aria-label="Negarin Webdesign Startseite">
       <img src="../../assets/images/negarin-logo-transparent.png" alt="Negarin Webdesign Logo">
       </a>
-      <a href="/" class="back-btn">Zurück zum Portfolio</a>
+      <a href="/" class="back-btn">Back to Home</a>
     </div>
   </header>
 
@@ -118,15 +118,17 @@
     <section class="intro">
       <div class="container">
         <h1>BeautyStudio Website</h1>
-        <p>Ein modernes Webdesign-Konzept für ein Beauty-Studio.</p>
+        <p>A modern website design concept for a local barbershop.</p>
         <p style="font-size: 0.8rem; color: #888; margin-top: 4px;">
-          Konzeptdesign für ein lokales Unternehmen – Portfolio-Projekt.
+          A conceptual design created for a local business – portfolio project.
         </p>
       </div>
     </section>
 
     <section class="container gallery">
        <img src="../../assets/images/Beauty/HeaderBeauty.jpg" alt="Beauty Website Header">
+<img src="../../assets/images/Beauty/HeaderBeauty.jpg" alt="Beauty Website Header">
+<img src="../../assets/images/Beauty/HeaderBeauty.jpg" alt="Beauty Website Header">
       
     </section>
   </main>
