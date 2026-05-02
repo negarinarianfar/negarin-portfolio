@@ -87,22 +87,34 @@
   }
 
   @keyframes r {
-    0%, 3% {
-      transform: var(--_t) rotate(0deg);
+   0%, 3% {
+      transform: perspective(280px) rotateX(-90deg) rotate(0deg);
     }
-
+  
+    14.66%, 19.66% {
+      transform: perspective(280px) rotateX(-90deg) rotate(-60deg);
+    }
+  
     31.33%, 36.33% {
-      transform: var(--_t) rotate(-120deg);
+      transform: perspective(280px) rotateX(-90deg) rotate(-120deg);
     }
-
+  
+    48%, 53% {
+      transform: perspective(280px) rotateX(-90deg) rotate(-180deg);
+    }
+  
     64.66%, 69.66% {
-      transform: var(--_t) rotate(-240deg);
+      transform: perspective(280px) rotateX(-90deg) rotate(-240deg);
     }
-
+  
+    81.33%, 86.33% {
+      transform: perspective(280px) rotateX(-90deg) rotate(-300deg);
+    }
+  
     98%, 100% {
-      transform: var(--_t) rotate(-360deg);
+      transform: perspective(280px) rotateX(-90deg) rotate(-360deg);
     }
-     
+  }
   }
 
   .gallery > img {
@@ -209,18 +221,6 @@
 
     .gallery {
       width: 220px;
-    }
-
-    .gallery > img:nth-child(1) {
-      transform: rotate(0deg) translateY(63.5px) rotateX(90deg);
-    }
-
-    .gallery > img:nth-child(2) {
-      transform: rotate(120deg) translateY(63.5px) rotateX(90deg);
-    }
-
-    .gallery > img:nth-child(3) {
-      transform: rotate(240deg) translateY(63.5px) rotateX(90deg);
     }
   }
 </style>
