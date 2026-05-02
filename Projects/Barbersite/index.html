@@ -70,70 +70,80 @@
     font-size: 1.05rem;
   }
 
-  .gallery-wrap {
-    min-height: 380px;
-    display: grid;
-    place-content: center;
-    perspective: 800px;
+  .slider-section {
+    padding: 40px 0 80px;
+  }
+
+  .slider {
+    width: min(92vw, 780px);
+    height: 430px;
+    margin: 0 auto;
+    position: relative;
     overflow: hidden;
+    border-radius: 28px;
+    box-shadow: 0 30px 80px rgba(111, 91, 255, 0.25);
+    background: #ddd;
   }
 
-  .gallery {
-  display: grid;
-  width: 160px;
-  transform-style: preserve-3d;
-  --_t: perspective(280px) rotateX(-90deg);
-  animation: r 20s cubic-bezier(.5,-0.2,.5,1.2) infinite;
-}
-
-@keyframes r {
-  0%, 3% {
-    transform: var(--_t) rotate(0deg);
+  .slider img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transform: scale(1.08);
+    animation: slideShow 16s infinite;
   }
 
-  23%, 28% {
-    transform: var(--_t) rotate(-90deg);
+  .slider img:nth-child(1) {
+    animation-delay: 0s;
   }
 
-  48%, 53% {
-    transform: var(--_t) rotate(-180deg);
+  .slider img:nth-child(2) {
+    animation-delay: 4s;
   }
 
-  73%, 78% {
-    transform: var(--_t) rotate(-270deg);
+  .slider img:nth-child(3) {
+    animation-delay: 8s;
   }
 
-  98%, 100% {
-    transform: var(--_t) rotate(-360deg);
+  .slider img:nth-child(4) {
+    animation-delay: 12s;
   }
-}
 
-.gallery > img {
-  grid-area: 1/1;
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: contain;
-  backgrand: #fff;
-  padding: 8px;
-  border-radius: 18px;
-}
+  @keyframes slideShow {
+    0% {
+      opacity: 0;
+      transform: scale(1.08) translateX(30px);
+    }
 
-/* موقعیت ۴ عکس */
-.gallery > img:nth-child(1) {
-  transform: rotate(0deg) translateY(80px) rotateX(90deg);
-}
+    8% {
+      opacity: 1;
+      transform: scale(1) translateX(0);
+    }
 
-.gallery > img:nth-child(2) {
-  transform: rotate(90deg) translateY(80px) rotateX(90deg);
-}
+    25% {
+      opacity: 1;
+      transform: scale(1) translateX(0);
+    }
 
-.gallery > img:nth-child(3) {
-  transform: rotate(180deg) translateY(80px) rotateX(90deg);
-}
+    33% {
+      opacity: 0;
+      transform: scale(1.05) translateX(-30px);
+    }
 
-.gallery > img:nth-child(4) {
-  transform: rotate(270deg) translateY(80px) rotateX(90deg);
-}
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .slider {
+      height: 260px;
+      border-radius: 20px;
+    }
+  }
 
   
 
@@ -209,15 +219,7 @@
     .logo img {
       width: 170px;
     }
-
-    .gallery-wrap {
-      min-height: 340px;
-    }
-
-    .gallery {
-      width: 220px;
-    }
-  }
+    
 </style>
 </head>
 
@@ -244,8 +246,8 @@
       </div>
     </section>
 
-    <section class="gallery-wrap">
-      <div class="gallery">
+    <section class="slider-section">
+     <div class="slider">
         <img src="../../assets/images/Barbersite/Header Barbersite.jpg" alt="Barbershop Website Startseite">
         <img src="../../assets/images/Barbersite/Kontact Barbersite.jpg" alt="Barbershop Website Kontakt">
         <img src="../../assets/images/Barbersite/Footer Barbersite.jpg" alt="Barbershop Website Footer">
