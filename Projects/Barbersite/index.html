@@ -5,207 +5,219 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Barber Site | Negarin Webdesign</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f8f7fc;
-      color: #1d2340;
-      overflow-x: hidden;
-    }
+ <style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f7fc;
+    color: #1d2340;
+    overflow-x: hidden;
+  }
 
-    .container {
-      width: min(92%, 1100px);
-      margin: 0 auto;
-    }
+  .container {
+    width: min(92%, 1100px);
+    margin: 0 auto;
+  }
 
-    header {
-      padding: 28px 0;
-      background: #fff;
-      border-bottom: 1px solid rgba(98, 82, 181, 0.12);
-    }
+  header {
+    padding: 28px 0;
+    background: #fff;
+    border-bottom: 1px solid rgba(98, 82, 181, 0.12);
+  }
 
-    .top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+  .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
 
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      flex-shrink: 0;
-    }
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
 
-    .logo img {
-      width: 210px;
-      height: auto;
-      display: block;
-    }
+  .logo img {
+    width: 210px;
+    height: auto;
+    display: block;
+  }
 
-    .back-btn {
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: #6f5bff;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-    }
+  .back-btn {
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: #6f5bff;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+  }
 
-    .intro {
-      text-align: center;
-      padding: 55px 0 35px;
-    }
+  .intro {
+    text-align: center;
+    padding: 55px 0 35px;
+  }
 
-    .intro h1 {
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      margin: 0 0 12px;
-    }
+  .intro h1 {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    margin: 0 0 12px;
+  }
 
-    .intro p {
-      color: #697289;
-      margin: 0;
-      font-size: 1.05rem;
-    }
+  .intro p {
+    color: #697289;
+    margin: 0;
+    font-size: 1.05rem;
+  }
 
-    
-.gallery {
+  .gallery-wrap {
+    min-height: 380px;
+    display: grid;
+    place-content: center;
+    perspective: 800px;
+    overflow: hidden;
+  }
+
+  .gallery {
     display: grid;
     width: 160px;
     transform-style: preserve-3d;
     --_t: perspective(280px) rotateX(-90deg);
-    animation: r 12s cubic-bezier(.5,-0.2,.5,1.2) infinite;
+    animation: r 12s cubic-bezier(.5, -0.2, .5, 1.2) infinite;
   }
-  
+
   @keyframes r {
     0%, 3% {
-      transform: perspective(280px) rotateX(-90deg) rotate(0deg);
+      transform: var(--_t) rotate(0deg);
     }
-  
-    14.66%, 19.66% {
-      transform: perspective(280px) rotateX(-90deg) rotate(-60deg);
-    }
-  
+
     31.33%, 36.33% {
-      transform: perspective(280px) rotateX(-90deg) rotate(-120deg);
+      transform: var(--_t) rotate(-120deg);
+    }
+
+    64.66%, 69.66% {
+      transform: var(--_t) rotate(-240deg);
+    }
+
+    98%, 100% {
+      transform: var(--_t) rotate(-360deg);
     }
   }
-  
+
   .gallery > img {
-    grid-area: 1/1;
+    grid-area: 1 / 1;
     width: 100%;
     aspect-ratio: 1;
     object-fit: cover;
+    border-radius: 18px;
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.22);
   }
-  
-  /* موقعیت هر عکس */
+
   .gallery > img:nth-child(1) {
-    transform: rotate(0deg) translateY(138.56px) rotateX(90deg);
+    transform: rotate(0deg) translateY(46.2px) rotateX(90deg);
   }
-  
+
   .gallery > img:nth-child(2) {
-    transform: rotate(60deg) translateY(138.56px) rotateX(90deg);
+    transform: rotate(120deg) translateY(46.2px) rotateX(90deg);
   }
-  
+
   .gallery > img:nth-child(3) {
-    transform: rotate(120deg) translateY(138.56px) rotateX(90deg);
+    transform: rotate(240deg) translateY(46.2px) rotateX(90deg);
   }
-  
-  
-  body {
+
+  .video-section {
+    padding: 10px 0 90px;
+  }
+
+  .video-title {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .video-title h2 {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    margin: 0 0 10px;
+  }
+
+  .video-title p {
+    color: #697289;
     margin: 0;
-    min-height: 100vh;
-    display: grid;
-    place-content: center;
-    background: #547980;
-    overflow: hidden;
   }
 
+  .video-box {
+    max-width: 850px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 28px;
+    padding: 10px;
+    background: linear-gradient(135deg, #6f5bff, #b8a8ff, #ffffff);
+    box-shadow: 0 30px 80px rgba(111, 91, 255, 0.28);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
 
+  .video-box::before {
+    content: "";
+    position: absolute;
+    inset: -18px;
+    border-radius: 36px;
+    background: radial-gradient(circle, rgba(111, 91, 255, 0.35), transparent 65%);
+    z-index: -1;
+    opacity: 0.75;
+    filter: blur(18px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
 
-    footer {
-      text-align: center;
-      padding: 28px;
-      color: #697289;
-      background: #fff;
-      border-top: 1px solid rgba(98, 82, 181, 0.12);
+  .video-box:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 40px 100px rgba(111, 91, 255, 0.38);
+  }
+
+  .video-box:hover::before {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+
+  .video-box video {
+    width: 100%;
+    display: block;
+    border-radius: 22px;
+    background: #111;
+  }
+
+  footer {
+    text-align: center;
+    padding: 28px;
+    color: #697289;
+    background: #fff;
+    border-top: 1px solid rgba(98, 82, 181, 0.12);
+  }
+
+  @media (max-width: 520px) {
+    .logo img {
+      width: 170px;
     }
 
-    @media (max-width: 520px) {
-      .logo img {
-        width: 170px;
-      }
-
-      .gallery-wrap {
-        min-height: 340px;
-      }
-
-      .gallery {
-        width: 220px;
-      }
+    .gallery-wrap {
+      min-height: 340px;
     }
 
-    .video-section {
-  padding: 10px 0 90px;
-}
+    .gallery {
+      width: 220px;
+    }
 
-.video-box {
-  max-width: 850px;
-  margin: 0 auto;
-  position: relative;
-  border-radius: 28px;
-  padding: 10px;
-  background: linear-gradient(135deg, #6f5bff, #b8a8ff, #ffffff);
-  box-shadow: 0 30px 80px rgba(111, 91, 255, 0.28);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
+    .gallery > img:nth-child(1) {
+      transform: rotate(0deg) translateY(63.5px) rotateX(90deg);
+    }
 
-.video-box::before {
-  content: "";
-  position: absolute;
-  inset: -18px;
-  border-radius: 36px;
-  background: radial-gradient(circle, rgba(111, 91, 255, 0.35), transparent 65%);
-  z-index: -1;
-  opacity: 0.75;
-  filter: blur(18px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-}
+    .gallery > img:nth-child(2) {
+      transform: rotate(120deg) translateY(63.5px) rotateX(90deg);
+    }
 
-.video-box:hover {
-  transform: translateY(-10px) scale(1.01);
-  box-shadow: 0 40px 100px rgba(111, 91, 255, 0.38);
-}
-
-.video-box:hover::before {
-  opacity: 1;
-  transform: scale(1.04);
-}
-
-.video-box video {
-  width: 100%;
-  display: block;
-  border-radius: 22px;
-  background: #111;
-}
-
-.video-title {
-  text-align: center;
-  margin-bottom: 24px;
-}
-
-.video-title h2 {
-  font-size: clamp(1.8rem, 3vw, 2.6rem);
-  margin: 0 0 10px;
-}
-
-.video-title p {
-  color: #697289;
-  margin: 0;
-}
-  </style>
+    .gallery > img:nth-child(3) {
+      transform: rotate(240deg) translateY(63.5px) rotateX(90deg);
+    }
+  }
+</style>
 </head>
 
 <body>
