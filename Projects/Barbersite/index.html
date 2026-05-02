@@ -75,7 +75,7 @@
       display: grid;
       place-items: center;
       padding: 30px 0 90px;
-      perspective: 900px;
+      perspective: 2000px;
     }
 
     .gallery {
@@ -91,24 +91,24 @@
       width: 100%;
       aspect-ratio: 1;
       object-fit: contain;
-      padding: 8px;
       border-radius: 24px;
       box-shadow: 0 25px 60px rgba(86, 67, 163, 0.25);
       border: 1px solid rgba(98, 82, 181, 0.18);
-      background: #fff;
+      background: linear-gradient(135deg, #6f5bff, #b8a8ff);
+      padding: 6px;
     }
 
-    .gallery img:nth-child(1) {
-      transform: rotate(0deg) translateY(65%) rotateX(90deg);
-    }
+   .gallery img:nth-child(1) {
+  transform: rotateY(0deg) translateZ(240px); /* جلوتر */
+}
 
-    .gallery img:nth-child(2) {
-      transform: rotate(120deg) translateY(65%) rotateX(90deg);
-    }
+.gallery img:nth-child(2) {
+  transform: rotateY(120deg) translateZ(140px); /* عقب‌تر */
+}
 
-    .gallery img:nth-child(3) {
-      transform: rotate(240deg) translateY(65%) rotateX(90deg);
-    }
+.gallery img:nth-child(3) {
+  transform: rotateY(240deg) translateZ(140px); /* عقب‌تر */
+}
 
     @keyframes rotateGallery {
       0%, 5% {
