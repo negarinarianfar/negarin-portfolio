@@ -81,18 +81,144 @@
       font-size: 1.05rem;
     }
 
-    .gallery {
-      display: grid;
-      gap: 34px;
-      padding-bottom: 70px;
-    }
+   .slider-section {
+    padding: 40px 0 80px;
+  }
+.slider {
+  width: min(92vw, 780px);
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 30px 80px rgba(111, 91, 255, 0.25), 0 0 0 1px rgba(111, 91, 255, 0.08) inset;
+  background: linear-gradient(135deg, #e9e5ff, #dcd6ff)
+}
 
-    .gallery img {
-      width: 100%;
-      border-radius: 24px;
-      box-shadow: 0 20px 50px rgba(86, 67, 163, 0.13);
-      border: 1px solid rgba(98, 82, 181, 0.12);
+.slider img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* عکس کامل دیده میشه */
+  opacity: 0;
+  transform: scale(1.03);
+  animation: slideShow 16s infinite;
+}
+
+.slider img:nth-child(1) { animation-delay: 0s; }
+.slider img:nth-child(2) { animation-delay: 4s; }
+.slider img:nth-child(3) { animation-delay: 8s; }
+.slider img:nth-child(4) { animation-delay: 12s; }
+
+@keyframes slideShow {
+  0% {
+    opacity: 0;
+    transform: scale(1.03) translateX(25px);
+  }
+
+  8% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+
+  25% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+
+  33% {
+    opacity: 0;
+    transform: scale(1.03) translateX(-25px);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .slider {
+    width: 94vw;
+    aspect-ratio: 4 / 3; /* دیگه مربع نیست */
+    border-radius: 16px;
+  }
+
+  .slider img {
+    object-fit: contain; /* کامل دیده میشه */
+  }
+}
+
+  
+
+
+  .video-section {
+    padding: 10px 0 90px;
+  }
+
+  .video-title {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .video-title h2 {
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    margin: 0 0 10px;
+  }
+
+  .video-title p {
+    color: #697289;
+    margin: 0;
+  }
+
+  .video-box {
+    max-width: 850px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 28px;
+    padding: 10px;
+    background: linear-gradient(135deg, #6f5bff, #b8a8ff, #ffffff);
+    box-shadow: 0 30px 80px rgba(111, 91, 255, 0.28);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .video-box::before {
+    content: "";
+    position: absolute;
+    inset: -18px;
+    border-radius: 36px;
+    background: radial-gradient(circle, rgba(111, 91, 255, 0.35), transparent 65%);
+    z-index: -1;
+    opacity: 0.75;
+    filter: blur(18px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  .video-box:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 40px 100px rgba(111, 91, 255, 0.38);
+  }
+
+  .video-box:hover::before {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+
+  .video-box video {
+    width: 100%;
+    display: block;
+    border-radius: 22px;
+    background: #111;
+  }
+
+  @media (max-width: 520px) {
+    .logo img {
+      width: 170px;
     }
+    
+
+
+
 
     footer {
       text-align: center;
@@ -127,12 +253,30 @@
       </div>
     </section>
 
-    <section class="container gallery">
-      <img src="../../../assets/images/Restaurant/Header Restaurantsite.jpg" alt="Barbershop Website Startseite">
-      <img src="../../../assets/images/Restaurant/Willkomen Restaurantsite.jpg" alt="Barbershop Website Kontakt">
-      <img src="../../../assets/images/Restaurant/Kontakt Resraurantsite.jpg" alt="Barbershop Website Footer">
-      
+    
+
+    <section class="slider-section">
+     <div class="slider">
+        <img src="../../assets/images/Barbersite/Header Barbersite.jpg" alt="Barbershop Website Startseite">
+        <img src="../../assets/images/Barbersite/Kontact Barbersite.jpg" alt="Barbershop Website Kontakt">
+        <img src="../../assets/images/Barbersite/Footer Barbersite.jpg" alt="Barbershop Website Footer">
+         <img src="../../assets/images/Barbersite/Barbersite_uns.png" alt="Barbershop Website uns">
+      </div>
     </section>
+
+    <section class="container video-section">
+  <div class="video-title">
+    <h2>Live Website Preview</h2>
+    <p>Ein kurzer Einblick in das Design und die Benutzerführung der Website.</p>
+  </div>
+  <div class="video-box">
+    <video controls poster="../../assets/images/Barbersite/Header Barbersite.jpg">
+      <source src="../../assets/videos/Barber-video.mp4" type="video/mp4">
+      Dein Browser unterstützt dieses Video nicht.
+    </video>
+  </div>
+</section>
+
   </main>
 
   <footer>
