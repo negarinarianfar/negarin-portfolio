@@ -79,35 +79,53 @@
     }
 
     .gallery {
-      display: grid;
-      width: 180px;
-      transform-style: preserve-3d;
-      --_t: perspective(520px) rotateX(-90deg);
-      animation: rotateGallery 30s ease-in-out infinite;
-    }
+  display: grid;
+  width: 180px;
+  transform-style: preserve-3d;
+  --_t: perspective(600px) rotateX(-90deg);
+  animation: rotateGallery 30s linear infinite;
+}
 
-    .gallery img {
-      grid-area: 1 / 1;
-      width: 100%;
-      aspect-ratio: 1;
-      object-fit: contain;
-      border-radius: 24px;
-      box-shadow: 0 25px 60px rgba(86, 67, 163, 0.25);
-      border: 1px solid rgba(98, 82, 181, 0.18);
-      background: linear-gradient(135deg, #6f5bff, #b8a8ff);
-      padding: 6px;
-    }
+.gallery img {
+  grid-area: 1 / 1;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
 
-   .gallery img:nth-child(1) {
-  transform: rotateY(0deg) translateZ(240px); /* جلوتر */
+  background: linear-gradient(135deg, #6f5bff, #b8a8ff);
+  padding: 6px;
+  border-radius: 22px;
+}
+
+/* زاویه‌ها مثل قبل */
+.gallery img:nth-child(1) {
+  transform: rotate(0deg) translateY(80%) rotateX(90deg);
 }
 
 .gallery img:nth-child(2) {
-  transform: rotateY(120deg) translateZ(140px); /* عقب‌تر */
+  transform: rotate(120deg) translateY(80%) rotateX(90deg);
 }
 
 .gallery img:nth-child(3) {
-  transform: rotateY(240deg) translateZ(140px); /* عقب‌تر */
+  transform: rotate(240deg) translateY(80%) rotateX(90deg);
+}
+
+@keyframes rotateGallery {
+  0%, 5% {
+    transform: var(--_t) rotate(0deg);
+  }
+
+  33%, 38% {
+    transform: var(--_t) rotate(-120deg);
+  }
+
+  66%, 71% {
+    transform: var(--_t) rotate(-240deg);
+  }
+
+  96%, 100% {
+    transform: var(--_t) rotate(-360deg);
+  }
 }
 
     @keyframes rotateGallery {
