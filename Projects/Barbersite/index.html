@@ -82,7 +82,7 @@
   display: grid;
   width: 180px;
   transform-style: preserve-3d;
-  --_t: perspective(600px) rotateX(-90deg);
+  --_t: perspective(600px) rotateX(-72deg);
   animation: rotateGallery 30s linear infinite;
 }
 
@@ -99,15 +99,15 @@
 
 /* زاویه‌ها مثل قبل */
 .gallery img:nth-child(1) {
-  transform: rotate(0deg) translateY(80%) rotateX(-90deg);
+  transform: rotate(0deg) translateY(80%) rotateX(90deg);
 }
 
 .gallery img:nth-child(2) {
-  transform: rotate(120deg) translateY(80%) rotateX(-90deg);
+  transform: rotate(120deg) translateY(80%) rotateX(90deg);
 }
 
 .gallery img:nth-child(3) {
-  transform: rotate(240deg) translateY(80%) rotateX(-90deg);
+  transform: rotate(240deg) translateY(80%) rotateX(90deg);
 }
 
 @keyframes rotateGallery {
@@ -268,7 +268,7 @@
 
   <div class="video-box">
     <video controls poster="../../assets/images/Barbersite/Header Barbersite.jpg">
-      <source src="../../assets/videos/Barber-video.mp4" type="video/mp4">
+      <source src="../../assets/videos/Barber-video.mov" type="video/mp4">
       Dein Browser unterstützt dieses Video nicht.
     </video>
   </div>
