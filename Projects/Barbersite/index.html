@@ -83,14 +83,15 @@
       width: 180px;
       transform-style: preserve-3d;
       --_t: perspective(520px) rotateX(-90deg);
-      animation: rotateGallery 18s ease-in-out infinite;
+      animation: rotateGallery 30s ease-in-out infinite;
     }
 
     .gallery img {
       grid-area: 1 / 1;
       width: 100%;
       aspect-ratio: 1;
-      object-fit: cover;
+      object-fit: contain;
+      padding: 8px;
       border-radius: 24px;
       box-shadow: 0 25px 60px rgba(86, 67, 163, 0.25);
       border: 1px solid rgba(98, 82, 181, 0.18);
