@@ -185,12 +185,14 @@ nav a:hover {
   box-shadow: 0 12px 30px rgba(86, 67, 163, 0.06);
 }
 
-.hero h1 {
+.hero h2 {
   margin: 0;
   max-width: 760px;
   font-size: clamp(3rem, 5.6vw, 5.25rem);
   line-height: 1.06;
   letter-spacing: -0.06em;
+  direction: ltr;
+  text-align: left;
 }
 
 .lead {
