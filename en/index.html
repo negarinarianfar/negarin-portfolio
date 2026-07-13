@@ -1,82 +1,137 @@
+```html
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Negarin Webdesign | Moderne Websites für kleine Unternehmen</title>
+  <title>NegarinStudio | Web Development, Software & Digital Solutions</title>
 
-  <meta name="description" content="Professionelles Webdesign-Portfolio für kleine Unternehmen in Deutschland. Moderne, responsive und benutzerfreundliche Websites." />
+  <meta
+    name="description"
+    content="NegarinStudio develops modern websites, custom web applications and digital solutions for companies, freelancers and local service providers in Germany."
+  />
 
-  <link rel="stylesheet" href="../../style.css">
+  <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
+
+  <!-- =========================
+       HEADER
+  ========================== -->
+
   <header>
     <div class="container nav">
-      <a href="#home" class="logo" aria-label="Negarin Webdesign Startseite">
-        <img src="../assets/images/negarin-logo-transparent.png" alt="Negarin Webdesign Logo">
+
+      <a href="#home" class="logo" aria-label="NegarinStudio Home">
+        <img
+          src="../assets/images/negarin-logo-transparent.png"
+          alt="NegarinStudio Logo"
+        >
       </a>
 
-      <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">☰</button>
-      
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mainNav"
+      >
+        ☰
+      </button>
 
       <nav id="mainNav">
         <ul>
-          <li><a href="#Leinisgung">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="/en/price/">Pricing</a></li>
-          <li><a href="#vorteile">Benefits</a></li>
-          <li><a href="#ablauf">Process</a></li>
-          <li><a href="#ueber-mich">About Me</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Projects</a></li>
+          <li><a href="#technologies">Technologies</a></li>
+          <li><a href="#advantages">Why Me</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#about-me">About Me</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
+
       <div class="lang-switch">
-      <a href="/negarin-portfolio/en/index.html"class="active">En</a>
-      <a href="/">DE</a>
+        <a href="/">DE</a>
+        <a href="/en/index.html" class="active">EN</a>
       </div>
+
     </div>
   </header>
 
+
   <main>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
     <section class="hero" id="home">
       <div class="container hero-grid">
-        <div class="hero-text">
-          <div class="eyebrow">Freelance Web Designer in Germany</div>
 
-          <h1>Modern Websites for Businesses and Professionals</h1>
+        <div class="hero-text">
+
+          <div class="eyebrow">
+            Freelance Software Developer for Web & Digital Solutions
+          </div>
+
+          <h2>
+            Digital Solutions for Modern Businesses
+          </h2>
 
           <p class="lead">
-            
-I design professional, responsive, and user-friendly websites with a focus on clean design, clear structure, and a strong first impression.
+            I develop professional websites, custom web applications and
+            digital solutions for companies, freelancers and local service
+            providers. I combine modern technology, user-friendly design
+            and business-oriented thinking.
           </p>
 
           <div class="hero-actions">
-            <a class="btn" href="#portfolio">View Portfolio</a>
-            <a class="btn secondary" href="#kontakt">Request a Project</a>
+            <a class="btn" href="#portfolio">
+              View Projects
+            </a>
+
+            <a class="btn secondary" href="#contact">
+              Request a Project
+            </a>
           </div>
 
           <div class="stats">
+
             <div class="stat">
-              <strong>Modern</strong>
-              <span>Clean and professional web design</span>
+              <strong>Web Development</strong>
+              <span>
+                Modern and responsive websites for professional
+                online presence.
+              </span>
             </div>
 
             <div class="stat">
-              <strong>Responsive</strong>
-              <span>Optimized for desktop, tablet, and mobile</span>
+              <strong>Digital Solutions</strong>
+              <span>
+                Custom features and digital systems for specific
+                business requirements.
+              </span>
             </div>
 
             <div class="stat">
-              <strong>Goal-Oriented</strong>
-              <span>Websites focused on building trust and generating leads</span>
+              <strong>Future-Oriented</strong>
+              <span>
+                Continuous expansion into automation and
+                AI-powered applications.
+              </span>
             </div>
+
           </div>
         </div>
 
+
         <div class="hero-visual">
+
           <div class="browser-mockup">
+
             <div class="browser-top">
               <span></span>
               <span></span>
@@ -84,355 +139,1086 @@ I design professional, responsive, and user-friendly websites with a focus on cl
             </div>
 
             <div class="mockup-content">
+
               <div class="mockup-header"></div>
 
               <div class="mockup-grid">
+
                 <div class="mockup-card large">
-                  <p>Restaurant Website</p>
+                  <p>Web Development</p>
                 </div>
 
                 <div class="mockup-card beauty">
-                  <p>Beauty Studio</p>
+                  <p>Digital Solutions</p>
                 </div>
 
                 <div class="mockup-card service">
-                  <p>Service Website</p>
+                  <p>Custom Applications</p>
                 </div>
+
               </div>
             </div>
+
           </div>
 
-          <div class="floating-card top-card">Responsive Design</div>
-          <div class="floating-card bottom-card">Moderne Website</div>
+          <div class="floating-card top-card">
+            Software & Web
+          </div>
+
+          <div class="floating-card bottom-card">
+            Digital Solutions
+          </div>
+
         </div>
+
       </div>
     </section>
 
-    <section id="Leinisgung">
+
+    <!-- =========================
+         SERVICES
+    ========================== -->
+
+    <section id="services">
       <div class="container">
+
         <div class="section-head">
           <h2>Services</h2>
+
           <p>
-           I help businesses build a professional online presence and attract potential customers with a clear and modern website.
+            NegarinStudio supports small and medium-sized businesses,
+            freelancers and local service providers in developing
+            professional digital solutions.
           </p>
         </div>
 
-        <div class="grid-3">
-          <article class="card">
-            <div class="service-icon">✦</div>
-            <h3>Web Design</h3>
-            <p>
-Custom-designed modern websites with clear structure, appealing visuals, and user-friendly layout.</p>
-          </article>
+
+        <div class="services-grid">
 
           <article class="card">
-            <div class="service-icon">◫</div>
-            <h3>Landing Pages</h3>
-            <p>High-converting and well-structured pages for services, campaigns, or local businesses.</p>
-          </article>
 
-          <article class="card">
             <div class="service-icon">⌘</div>
-            <h3>Website Redesign</h3>
+
+            <h3>Web Development</h3>
+
             <p>
-Improving existing websites to enhance design, readability, trust, and mobile experience.</p>
+              Development of modern, responsive and technically reliable
+              business websites.
+            </p>
+
+            <ul class="service-list">
+              <li>Business websites</li>
+              <li>Landing pages</li>
+              <li>WordPress websites</li>
+              <li>Responsive web design</li>
+              <li>Website redesign</li>
+            </ul>
+
           </article>
+
+
+          <article class="card">
+
+            <div class="service-icon">◫</div>
+
+            <h3>Custom Web Solutions</h3>
+
+            <p>
+              Development of digital features tailored to the individual
+              requirements of a business.
+            </p>
+
+            <ul class="service-list">
+              <li>Booking and reservation systems</li>
+              <li>Customer portals</li>
+              <li>Contact and inquiry processes</li>
+              <li>Dashboards</li>
+              <li>Custom website features</li>
+            </ul>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="service-icon">⚙</div>
+
+            <h3>Digital Solutions</h3>
+
+            <p>
+              Support in digitizing and simplifying business
+              processes.
+            </p>
+
+            <ul class="service-list">
+              <li>Digital business processes</li>
+              <li>Workflow optimization</li>
+              <li>Data and form solutions</li>
+              <li>System integrations</li>
+              <li>Technical consulting</li>
+            </ul>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="service-icon">↻</div>
+
+            <h3>Maintenance & Support</h3>
+
+            <p>
+              Long-term technical support after the completion of
+              a project.
+            </p>
+
+            <ul class="service-list">
+              <li>Technical maintenance</li>
+              <li>Updates</li>
+              <li>Troubleshooting</li>
+              <li>Performance optimization</li>
+              <li>Basic SEO</li>
+            </ul>
+
+          </article>
+
+
+          <article class="card future-service">
+
+            <div class="service-icon">✦</div>
+
+            <div class="service-badge">In Development</div>
+
+            <h3>Automation</h3>
+
+            <p>
+              Future solutions for automating repetitive
+              business processes.
+            </p>
+
+            <ul class="service-list">
+              <li>Automated workflows</li>
+              <li>Data processing</li>
+              <li>Digital assistants</li>
+              <li>API integrations</li>
+              <li>Process automation</li>
+            </ul>
+
+          </article>
+
+
+          <article class="card future-service">
+
+            <div class="service-icon">◇</div>
+
+            <div class="service-badge">Long-Term Expansion</div>
+
+            <h3>AI-Powered Solutions</h3>
+
+            <p>
+              Long-term development of intelligent software solutions for
+              digital business processes.
+            </p>
+
+            <ul class="service-list">
+              <li>AI-powered workflows</li>
+              <li>Intelligent assistance systems</li>
+              <li>Machine learning applications</li>
+              <li>Data-driven solutions</li>
+              <li>Custom AI prototypes</li>
+            </ul>
+
+          </article>
+
         </div>
+
       </div>
     </section>
+
+
+    <!-- =========================
+         PORTFOLIO
+    ========================== -->
 
     <section id="portfolio">
       <div class="container">
+
         <div class="section-head">
           <h2>Selected Projects</h2>
+
           <p>
-Here are some sample projects from different industries.</p>
+            A selection of my projects in web development,
+            e-commerce and digital business presentation.
+          </p>
         </div>
+
 
         <div class="portfolio-slider-wrap">
-          <button class="slider-btn slider-btn-prev" aria-label="Vorherige Projekte">‹</button>
+
+          <button
+            class="slider-btn slider-btn-prev"
+            aria-label="Previous projects"
+          >
+            ‹
+          </button>
+
 
           <div class="portfolio-slider" id="portfolioSlider">
+
             <article class="card portfolio-item">
+
               <div class="portfolio-cover">
                 <span class="portfolio-label">Café</span>
-                <img src="../assets/images/Coffeeshop/HeaderCoffee.jpg" alt="Café Website">
+
+                <img
+                  src="../assets/images/Coffeeshop/HeaderCoffee.jpg"
+                  alt="Website for a café"
+                >
               </div>
+
               <div class="portfolio-content">
                 <p>
-Elegant website for a café with emotional design, menu section, and mobile-friendly structure.</p>
-                <a class="project-btn" href="/Projects/Cafe'/en/" target="_blank">View Project</a>
+                  A modern website for a café with emotional design,
+                  a clear menu structure and responsive presentation.
+                </p>
+
+                <a
+                  class="project-btn"
+                  href="/Projects/Cafe'/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Project
+                </a>
               </div>
-            </article>
-            
-             <article class="card portfolio-item">
-              <div class="portfolio-cover">
-                <span class="portfolio-label">Online-Shop</span>
-                <img src="../assets/images/Tehranmarket-site/Header.png" alt="Online-Shop Website">
-              </div>
-              <div class="portfolio-content">
-                <p>
-Clean and trustworthy e-commerce website for Persian specialties, focused on usability and customer trust.</p>
-                <a class="project-btn" href="/Projects/Tehranmarket/en/" target="_blank">View Project</a>
-              </div>
+
             </article>
 
-            <article class="card portfolio-item">
-              <div class="portfolio-cover">
-                <span class="portfolio-label">Services</span>
-                <img src="../assets/images/Services/HeaderServices.jpg" alt="Reinigungsservice Website">
-              </div>
-              <div class="portfolio-content">
-                <p>
-Clean and trustworthy website for a service business focused on generating inquiries.</p>
-                <a class="project-btn" href="/Projects/Services/en/" target="_blank">View Project</a>
-              </div>
-            </article>
 
             <article class="card portfolio-item">
+
               <div class="portfolio-cover">
-                <span class="portfolio-label">Gym</span>
-                <img src="../assets/images/GYm/HeaderGymsite.jpg" alt="Fitness Website">
+                <span class="portfolio-label">E-Commerce</span>
+
+                <img
+                  src="../assets/images/Tehranmarket-site/Header.png"
+                  alt="Online shop for Persian food products"
+                >
               </div>
+
               <div class="portfolio-content">
                 <p>
-Powerful website with bold design, service overview, and strong visual presence.</p>
-                <a class="project-btn" href="/Projects/Gym/en/" target="_blank">View Project</a>
+                  A modern online shop for Persian specialties with a focus
+                  on trust, clarity and customer experience.
+                </p>
+
+                <a
+                  class="project-btn"
+                  href="/Projects/Tehranmarket/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Project
+                </a>
               </div>
+
             </article>
 
+
             <article class="card portfolio-item">
+
               <div class="portfolio-cover">
-                <span class="portfolio-label">Barber</span>
-                <img src="../assets/images/Barbersite/Header Barbersite.jpg" alt="Barbershop Website">
+                <span class="portfolio-label">Service Business</span>
+
+                <img
+                  src="../assets/images/Services/HeaderServices.jpg"
+                  alt="Website for a cleaning company"
+                >
               </div>
+
               <div class="portfolio-content">
                 <p>
-Modern concept for a local barbershop with strong visuals and a premium look.</p>
-                <a class="project-btn" href="/Projects/Barbersite/en/" target="_blank">View Project</a>
+                  A clear and trustworthy business website focused on
+                  services, customer inquiries and local visibility.
+                </p>
+
+                <a
+                  class="project-btn"
+                  href="/Projects/Services/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Project
+                </a>
               </div>
+
             </article>
 
+
             <article class="card portfolio-item">
+
+              <div class="portfolio-cover">
+                <span class="portfolio-label">Fitness</span>
+
+                <img
+                  src="../assets/images/GYm/HeaderGymsite.jpg"
+                  alt="Website for a fitness studio"
+                >
+              </div>
+
+              <div class="portfolio-content">
+                <p>
+                  A dynamic website with strong visual design,
+                  a clear service overview and intuitive navigation.
+                </p>
+
+                <a
+                  class="project-btn"
+                  href="/Projects/Gym/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Project
+                </a>
+              </div>
+
+            </article>
+
+
+            <article class="card portfolio-item">
+
+              <div class="portfolio-cover">
+                <span class="portfolio-label">Barbershop</span>
+
+                <img
+                  src="../assets/images/Barbersite/Header Barbersite.jpg"
+                  alt="Website for a barbershop"
+                >
+              </div>
+
+              <div class="portfolio-content">
+                <p>
+                  A modern website concept for a local barbershop with
+                  high-quality imagery and a professional appearance.
+                </p>
+
+                <a
+                  class="project-btn"
+                  href="/Projects/Barbersite/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Project
+                </a>
+              </div>
+
+            </article>
+
+
+            <article class="card portfolio-item">
+
               <div class="portfolio-cover">
                 <span class="portfolio-label">Restaurant</span>
-                <img src="../assets/images/Restaurant/Header Restaurantsite.jpg" alt="Restaurant Website">
+
+                <img
+                  src="../assets/images/Restaurant/Header Restaurantsite.jpg"
+                  alt="Website for a restaurant"
+                >
               </div>
+
               <div class="portfolio-content">
                 <p>
-Stylish restaurant website with clear menu structure, visuals, and easy reservation access.</p>
-                <a class="project-btn" href="/Projects/Restauransite/en/" target="_blank">View Project</a>
+                  A stylish restaurant website with a clear menu structure,
+                  visual presentation and reservation-focused layout.
+                </p>
+
+                <a
+                  class="project-btn"
+                  href="/Projects/Restauransite/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Project
+                </a>
               </div>
+
             </article>
+
 
             <article class="card portfolio-item">
+
               <div class="portfolio-cover">
-                <span class="portfolio-label">Beauty Studio</span>
-                <img src="../assets/images/Beauty/HeaderBeauty.jpg" alt="Beauty Studio Website">
+                <span class="portfolio-label">Beauty</span>
+
+                <img
+                  src="../assets/images/Beauty/HeaderBeauty.jpg"
+                  alt="Website for a beauty studio"
+                >
               </div>
+
               <div class="portfolio-content">
                 <p>
-High-quality design for a beauty salon focused on trust, services, and client inquiries.</p>
-                <a class="project-btn" href="/Projects/Beauty/en/" target="_blank">View Project</a>
+                  A professional website for a beauty studio focused on
+                  services, trust and easy contact.
+                </p>
+
+                <a
+                  class="project-btn"
+                  href="/Projects/Beauty/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Project
+                </a>
               </div>
+
             </article>
+
           </div>
 
-          <button class="slider-btn slider-btn-next" aria-label="Nächste Projekte">›</button>
+
+          <button
+            class="slider-btn slider-btn-next"
+            aria-label="Next projects"
+          >
+            ›
+          </button>
+
         </div>
+
       </div>
     </section>
 
-    <section id="vorteile">
-      <div class="container split">
-        <div class="card">
-          <h2>Why work with me?</h2>
-          <p>
-My focus is on websites that not only look good but also appear professional and build trust.</p>
 
-          <ul class="check-list">
-            <li>Modern and clean design</li>
-            <li>Responsive design for all devices</li>
-            <li>Clear structure for better user experience</li>
-            <li>Ideal for small businesses and local services</li>
-            <li>Custom design instead of generic templates</li>
-          </ul>
-        </div>
+    <!-- =========================
+         SOFTWARE & RESEARCH
+    ========================== -->
 
-        <div class="card">
-          <h2>Suitable for Clients and Professional Presentation</h2>
-          <p>
-This portfolio website can be used to showcase your work to clients while presenting your business in a professional way.</p>
-
-          <ul class="check-list">
-            <li>Professional presentation of your services</li>
-            <li>Clear positioning as a web designer</li>
-            <li>Professional impression for business partners and authorities</li>
-            <li>Structured overview of projects and skills</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="ablauf">
+    <section id="software-projects">
       <div class="container">
+
+        <div class="section-head">
+          <h2>Software & Technology Projects</h2>
+
+          <p>
+            In addition to client projects, I work with Python,
+            software development, machine learning and intelligent
+            decision-making systems.
+          </p>
+        </div>
+
+
+        <div class="grid-3">
+
+          <article class="card">
+
+            <div class="service-icon">♞</div>
+
+            <h3>Reinforcement Learning</h3>
+
+            <p>
+              Development of custom learning environments and decision models
+              using Python and PyTorch, including applications for strategic
+              games and sequential decision-making.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="service-icon">⌁</div>
+
+            <h3>Intelligent Networks</h3>
+
+            <p>
+              Research and development projects focused on optimizing
+              energy-efficient wireless sensor networks using
+              reinforcement learning.
+            </p>
+
+          </article>
+
+
+          <article class="card">
+
+            <div class="service-icon">◉</div>
+
+            <h3>AI & Computer Vision</h3>
+
+            <p>
+              Development of a concept for analyzing sports movements,
+              actions and tactical patterns using computer vision
+              and machine learning.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         TECHNOLOGIES
+    ========================== -->
+
+    <section id="technologies">
+      <div class="container">
+
+        <div class="section-head">
+          <h2>Technologies & Skills</h2>
+
+          <p>
+            Depending on the project requirements, I use modern technologies
+            for web development, software development and digital solutions.
+          </p>
+        </div>
+
+
+        <div class="technology-groups">
+
+          <div class="card technology-group">
+            <h3>Web Development</h3>
+
+            <div class="tech-list">
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>JavaScript</span>
+              <span>Responsive Design</span>
+              <span>WordPress</span>
+              <span>WooCommerce</span>
+            </div>
+          </div>
+
+
+          <div class="card technology-group">
+            <h3>Software Development</h3>
+
+            <div class="tech-list">
+              <span>Python</span>
+              <span>Git</span>
+              <span>REST APIs</span>
+              <span>Data Processing</span>
+              <span>Software Prototyping</span>
+            </div>
+          </div>
+
+
+          <div class="card technology-group">
+            <h3>AI & Machine Learning</h3>
+
+            <div class="tech-list">
+              <span>PyTorch</span>
+              <span>Machine Learning</span>
+              <span>Reinforcement Learning</span>
+              <span>Computer Vision</span>
+              <span>Intelligent Systems</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         TARGET GROUPS
+    ========================== -->
+
+    <section id="target-groups">
+      <div class="container">
+
+        <div class="section-head">
+          <h2>Who Are My Solutions For?</h2>
+
+          <p>
+            My services are especially suitable for small businesses and
+            organizations that want to modernize their digital presence
+            or digitize their business processes.
+          </p>
+        </div>
+
+
+        <div class="industry-grid">
+
+          <div class="industry-item">Small and medium-sized businesses</div>
+          <div class="industry-item">Freelancers</div>
+          <div class="industry-item">Start-ups</div>
+          <div class="industry-item">Local service providers</div>
+          <div class="industry-item">Restaurants and cafés</div>
+          <div class="industry-item">Medical and healthcare practices</div>
+          <div class="industry-item">Beauty and cosmetic studios</div>
+          <div class="industry-item">Cleaning companies</div>
+          <div class="industry-item">Craft businesses</div>
+          <div class="industry-item">Online shops</div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         ADVANTAGES
+    ========================== -->
+
+    <section id="advantages">
+      <div class="container split">
+
+        <div class="card">
+
+          <h2>Why Work With Me?</h2>
+
+          <p>
+            I combine technical knowledge, modern design and
+            business understanding to develop solutions that match
+            the real requirements of a company.
+          </p>
+
+          <ul class="check-list">
+            <li>Personal and individual support</li>
+            <li>Modern and technically reliable implementation</li>
+            <li>User-friendly and responsive solutions</li>
+            <li>Understanding of business requirements</li>
+            <li>Direct and transparent communication</li>
+            <li>Long-term technical support</li>
+          </ul>
+
+        </div>
+
+
+        <div class="card">
+
+          <h2>More Than Web Design</h2>
+
+          <p>
+            NegarinStudio is positioned as a long-term technical partner for
+            businesses. The initial focus is on web development, with a gradual
+            expansion into custom software solutions.
+          </p>
+
+          <ul class="check-list">
+            <li>Web development and digital business presence</li>
+            <li>Custom web features and applications</li>
+            <li>Digitization of business processes</li>
+            <li>Maintenance, support and further development</li>
+            <li>Future automation and AI solutions</li>
+          </ul>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =========================
+         PROCESS
+    ========================== -->
+
+    <section id="process">
+      <div class="container">
+
         <div class="section-head">
           <h2>How We Work Together</h2>
+
           <p>
-A clear process ensures a structured, smooth, and efficient collaboration.</p>
+            A structured development process ensures transparency,
+            efficiency and a result tailored to your business.
+          </p>
         </div>
+
 
         <div class="timeline">
+
           <div class="step">
+
             <div class="step-num">1</div>
+
             <div>
-              <h3>Initial Consultation</h3>
-              <p>We discuss your business, goals, target audience, and the desired direction.</p>
+              <h3>Analysis & Initial Consultation</h3>
+
+              <p>
+                We discuss your business, target audience,
+                challenges and required features.
+              </p>
             </div>
+
           </div>
 
+
           <div class="step">
+
             <div class="step-num">2</div>
+
             <div>
-              <h3>Concept & Design</h3>
-              <p>I create a tailored web design focused on structure, impact, and a modern look.</p>
+              <h3>Concept & Planning</h3>
+
+              <p>
+                I create a structured concept for the design,
+                technical implementation and project workflow.
+              </p>
             </div>
+
           </div>
 
+
           <div class="step">
+
             <div class="step-num">3</div>
+
             <div>
               <h3>Development</h3>
-              <p>The website is built responsively and optimized for all devices.</p>
+
+              <p>
+                The website or digital solution is developed responsively,
+                user-friendly and according to the agreed
+                requirements.
+              </p>
             </div>
+
           </div>
+
 
           <div class="step">
+
             <div class="step-num">4</div>
+
             <div>
-              <h3>Feedback & Delivery</h3>
-              <p>After final adjustments, you receive a fully finished website ready for your professional presence.</p>
+              <h3>Testing & Feedback</h3>
+
+              <p>
+                Features, content and presentation are tested.
+                Necessary adjustments are then implemented.
+              </p>
             </div>
+
           </div>
+
+
+          <div class="step">
+
+            <div class="step-num">5</div>
+
+            <div>
+              <h3>Launch & Support</h3>
+
+              <p>
+                After final approval, the project is launched.
+                Maintenance and technical support are available on request.
+              </p>
+            </div>
+
+          </div>
+
         </div>
+
       </div>
     </section>
 
-    <section id="ueber-mich">
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about-me">
       <div class="container">
+
         <div class="card about-box">
+
           <div class="profile">
-            <img src="../assets/images/Profile.jpg" alt="Negar Arianfar">
+            <img
+              src="../assets/images/Profile.jpg"
+              alt="Negar Arianfar – Software Developer"
+            >
           </div>
+
 
           <div>
+
             <h2>About Me</h2>
+
             <p>
-              
-I am a freelance web designer creating modern websites for businesses, local services, and entrepreneurs.
+              I am Negar Arianfar, a freelance software developer specializing
+              in web development and digital solutions.
             </p>
+
             <p>
-             
-My focus is on clean design, user-friendly structure, and a strong professional online presence.
+              My academic background includes Software Engineering
+              and Business Management with a focus on Marketing and
+              Sales. This allows me to approach technical requirements
+              from both a development and business perspective.
             </p>
+
+            <p>
+              I support companies in developing modern websites,
+              custom web solutions and digital processes.
+              I place particular importance on user-friendliness,
+              clear structures and solutions that can be expanded
+              over the long term.
+            </p>
+
+            <p>
+              At the same time, I continue to expand my skills in
+              Python, machine learning, reinforcement learning and
+              AI-powered software systems.
+            </p>
+
           </div>
+
         </div>
+
       </div>
     </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
 
     <section id="contact">
       <div class="container contact-box">
+
         <div class="card">
+
           <h2>Contact</h2>
+
           <p>
-Would you like to work with me or discuss a project? I look forward to your message.</p>
+            Would you like to discuss a website, a custom web solution
+            or a digital project? I look forward to hearing from you.
+          </p>
 
           <div class="contact-list">
-            <div class="contact-item"><strong>Email:</strong> arianfarnegarin@gmail.com</div>
-            <div class="contact-item"><strong>Phone:</strong> +49 176 71296421</div>
-            <div class="contact-item"><strong>Location:</strong> Mannheim, Germany</div>
-            <div class="contact-item"><strong>Services:</strong> Web Design, Landing Pages, Website Redesign</div>
+
+            <div class="contact-item">
+              <strong>Email:</strong>
+              <a href="mailto:arianfarnegarin@gmail.com">
+                arianfarnegarin@gmail.com
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <strong>Phone:</strong>
+              <a href="tel:+4917671296421">
+                +49 176 71296421
+              </a>
+            </div>
+
+            <div class="contact-item">
+              <strong>Location:</strong>
+              Mannheim, Germany
+            </div>
+
+            <div class="contact-item">
+              <strong>Services:</strong>
+              Web development, custom web solutions, digital solutions,
+              maintenance and technical support
+            </div>
+
           </div>
+
         </div>
+
 
         <div class="card">
-          <h2>Start Your Project</h2>
 
-          <form id="contactForm" action="https://formspree.io/f/mykloyab" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email-Adresse" required>
-            <input type="text" name="Company" placeholder="Company / Industry">
-            <textarea name="message" placeholder="Tell me briefly about your project..." required></textarea>
-            <button type="submit" class="btn">Send Message</button>
+          <h2>Request a Project</h2>
+
+          <form
+            id="contactForm"
+            action="https://formspree.io/f/mykloyab"
+            method="POST"
+          >
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Your name"
+              autocomplete="name"
+              required
+            >
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Your email address"
+              autocomplete="email"
+              required
+            >
+
+            <input
+              type="text"
+              name="company"
+              placeholder="Company / Industry"
+              autocomplete="organization"
+            >
+
+            <select name="project-type" aria-label="Project type">
+              <option value="">Select project type</option>
+              <option value="business-website">Business website</option>
+              <option value="landing-page">Landing page</option>
+              <option value="online-shop">Online shop</option>
+              <option value="web-application">Custom web application</option>
+              <option value="digital-solution">Digital solution</option>
+              <option value="maintenance">Maintenance and support</option>
+              <option value="other">Other</option>
+            </select>
+
+            <textarea
+              name="message"
+              placeholder="Briefly describe your project, goals and required features..."
+              required
+            ></textarea>
+
+            <button type="submit" class="btn">
+              Send Request
+            </button>
+
           </form>
+
         </div>
+
       </div>
     </section>
+
   </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
   <footer>
     <div class="container footer-wrap">
+
       <a href="#home" class="footer-logo">
-        <img src="../assets/images/negarin-logo-transparent.png" alt="Negarin Webdesign Logo">
+        <img
+          src="../assets/images/negarin-logo-transparent.png"
+          alt="NegarinStudio Logo"
+        >
       </a>
 
       <div class="footer-links">
-        <a href="/impressum/en/">Legal Notice</a>
-        <a href="/datenschutz/en/">Privacy Policy</a>
+        <a href="/en/imprint/">Imprint</a>
+        <a href="/en/privacy-policy/">Privacy Policy</a>
       </div>
 
       <div class="footer-bottom">
-        <div>© 2026 Negarin Webdesign. All rights reserved.</div>
-        <div>Web Design Portfolio & Freelance Showcase</div>
+        <div>
+          © 2026 NegarinStudio. All rights reserved.
+        </div>
+
+        <div>
+          Web Development · Software Development · Digital Solutions
+        </div>
       </div>
+
     </div>
   </footer>
 
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
   <script>
+
     const menuToggle = document.getElementById("menuToggle");
     const mainNav = document.getElementById("mainNav");
 
     if (menuToggle && mainNav) {
+
       menuToggle.addEventListener("click", function () {
-        mainNav.classList.toggle("active");
+
+        const isActive = mainNav.classList.toggle("active");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          isActive ? "true" : "false"
+        );
+
       });
 
+
       mainNav.querySelectorAll("a").forEach(function (link) {
+
         link.addEventListener("click", function () {
+
           mainNav.classList.remove("active");
+          menuToggle.setAttribute("aria-expanded", "false");
+
         });
+
       });
+
     }
+
 
     const portfolioSlider = document.getElementById("portfolioSlider");
     const prevBtn = document.querySelector(".slider-btn-prev");
     const nextBtn = document.querySelector(".slider-btn-next");
 
     if (portfolioSlider && prevBtn && nextBtn) {
-      const getScrollAmount = () => {
-        const firstCard = portfolioSlider.querySelector(".portfolio-item");
-        if (!firstCard) return 300;
+
+      const getScrollAmount = function () {
+
+        const firstCard =
+          portfolioSlider.querySelector(".portfolio-item");
+
+        if (!firstCard) {
+          return 300;
+        }
+
         return firstCard.offsetWidth + 22;
+
       };
 
-      prevBtn.addEventListener("click", () => {
-        portfolioSlider.scrollBy({ left: -getScrollAmount(), behavior: "smooth" });
+
+      prevBtn.addEventListener("click", function () {
+
+        portfolioSlider.scrollBy({
+          left: -getScrollAmount(),
+          behavior: "smooth"
+        });
+
       });
 
-      nextBtn.addEventListener("click", () => {
-        portfolioSlider.scrollBy({ left: getScrollAmount(), behavior: "smooth" });
+
+      nextBtn.addEventListener("click", function () {
+
+        portfolioSlider.scrollBy({
+          left: getScrollAmount(),
+          behavior: "smooth"
+        });
+
       });
+
     }
+
 
     const form = document.getElementById("contactForm");
 
     if (form) {
+
       form.addEventListener("submit", async function (event) {
+
         event.preventDefault();
+
+        const submitButton = form.querySelector(
+          'button[type="submit"]'
+        );
+
+        const originalButtonText = submitButton.textContent;
+
+        submitButton.disabled = true;
+        submitButton.textContent = "Sending...";
 
         const data = new FormData(form);
 
         try {
+
           const response = await fetch(form.action, {
             method: form.method,
             body: data,
@@ -442,15 +1228,37 @@ Would you like to work with me or discuss a project? I look forward to your mess
           });
 
           if (response.ok) {
-            window.location.href = "danke.html";
+
+            window.location.href = "thank-you.html";
+
           } else {
-            alert("Leider ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.");
+
+            alert(
+              "An error occurred. Please try again."
+            );
+
+            submitButton.disabled = false;
+            submitButton.textContent = originalButtonText;
+
           }
+
         } catch (error) {
-          alert("Leider ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.");
+
+          alert(
+            "An error occurred. Please try again."
+          );
+
+          submitButton.disabled = false;
+          submitButton.textContent = originalButtonText;
+
         }
+
       });
+
     }
+
   </script>
+
 </body>
 </html>
+```
